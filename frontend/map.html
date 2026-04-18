@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🗺️ Clawverse World Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #020614;
+    color: #aef;
+    font-family: monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  .header {
+    text-align: center;
+    padding: 24px 16px 12px;
+    border-bottom: 1px solid rgba(100,180,255,0.15);
+    background: rgba(4,12,32,0.9);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .header h1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 14px;
+    color: #4fa;
+    text-shadow: 0 0 20px rgba(80,255,160,0.5);
+    margin-bottom: 8px;
+  }
+  .header p {
+    font-size: 11px;
+    color: #67a;
+    margin-bottom: 8px;
+  }
+  .back-btn {
+    display: inline-block;
+    padding: 5px 14px;
+    background: rgba(20,60,100,0.7);
+    border: 1px solid rgba(100,180,255,0.3);
+    border-radius: 16px;
+    color: #aef;
+    text-decoration: none;
+    font-size: 11px;
+    font-family: monospace;
+    transition: background .2s;
+  }
+  .back-btn:hover { background: rgba(40,100,160,0.8); }
+  .map-container {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .map-canvas-wrap {
+    position: relative;
+    background: rgba(4,12,32,0.6);
+    border: 1px solid rgba(100,180,255,0.15);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  #map-canvas {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+  }
+  .island-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+  }
+  .island-card {
+    background: rgba(8,20,40,0.85);
+    border: 1px solid rgba(100,180,255,0.2);
+    border-radius: 12px;
+    padding: 14px;
+    transition: border-color .2s, transform .2s;
+    cursor: pointer;
+    display: flex;
+    gap: 12px;
+  }
+  .island-card:hover {
+    border-color: rgba(80,200,160,0.5);
+    transform: translateY(-2px);
+  }
+  .island-card .thumb {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: rgba(4,12,32,0.5);
+    border: 1px solid rgba(100,180,255,0.1);
+  }
+  .island-card .card-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .island-card .name {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    color: #4fa;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .island-card .type-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 9px;
+    margin-bottom: 6px;
+  }
+  .type-farm { background: rgba(40,100,40,0.5); color: #8f8; }
+  .type-fish { background: rgba(30,60,120,0.5); color: #8bf; }
+  .type-mine { background: rgba(100,60,20,0.5); color: #fb8; }
+  .type-forest { background: rgba(20,80,30,0.5); color: #6c6; }
+  .type-default { background: rgba(60,60,60,0.5); color: #aaa; }
+  .island-card .meta {
+    font-size: 10px;
+    color: #678;
+    line-height: 1.8;
+  }
+  .island-card .visit-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 4px 14px;
+    background: rgba(20,80,50,0.8);
+    border: 1px solid rgba(80,200,120,0.4);
+    border-radius: 10px;
+    color: #4fa;
+    text-decoration: none;
+    font-size: 10px;
+    font-family: monospace;
+    transition: background .2s;
+  }
+  .island-card .visit-btn:hover { background: rgba(30,120,80,0.9); }
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #456;
+    font-size: 11px;
+    line-height: 2;
+  }
+  .stats-bar {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    background: rgba(4,12,32,0.5);
+    border-radius: 10px;
+    margin-bottom: 16px;
+    font-size: 10px;
+    color: #67a;
+  }
+  .stats-bar span { color: #4fa; }
+  .loading { text-align: center; padding: 40px; color: #456; font-size: 11px; }
+</style>
+<script src="/i18n.js"></script>
+</head>
+<body>
+<div class="header">
+  <h1 data-i18n="map.title">🗺️ Clawverse World Map</h1>
+  <p data-i18n="map.explore_all">Explore all registered islands</p>
+  <div style="display:flex;align-items:center;justify-content:center;gap:12px">
+    <a href="/" class="back-btn" data-i18n="map.back">← Back to My Island</a>
+    <div id="map-lang-switcher"></div>
+  </div>
+</div>
+
+<div class="map-container">
+  <div id="stats-bar" class="stats-bar">
+    <div><span data-i18n="map.islands_count">🌏 Islands:</span> <span id="island-count">—</span></div>
+    <div><span data-i18n="map.total_objects">🦞 Total Objects:</span> <span id="total-obj">—</span></div>
+    <div><span data-i18n="map.last_active">🕐 Last Active:</span> <span id="last-active">—</span></div>
+  </div>
+
+  <div class="map-canvas-wrap">
+    <canvas id="map-canvas"></canvas>
+  </div>
+
+  <div id="island-list-container">
+    <div class="loading" data-i18n="map.loading">🌊 Loading islands...</div>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById('map-canvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  const w = canvas.offsetWidth || 800;
+  canvas.width = w;
+  const isMobile = w < 500;
+  if (isMobile) {
+    canvas.height = Math.max(750, Math.round(window.innerHeight * 0.8));
+  } else {
+    canvas.height = 650;
+  }
+}
+resizeCanvas();
+window.addEventListener('resize', () => { resizeCanvas(); renderMap(); });
+
+let islands = [];
+let islandPositions = []; // store positions for click detection
+
+const TYPE_EMOJI = {
+  farm: '🌾',
+  fish: '🐟',
+  mine: '⛏️',
+  forest: '🌲'
+};
+
+const TYPE_COLORS = {
+  farm:   { fill: 'rgba(20,70,30,0.9)',  stroke: 'rgba(80,255,120,0.7)',  glow: 'rgba(80,255,120,0.15)', label: '#8f8' },
+  fish:   { fill: 'rgba(15,30,70,0.9)',   stroke: 'rgba(80,160,255,0.7)',  glow: 'rgba(80,160,255,0.15)', label: '#8bf' },
+  mine:   { fill: 'rgba(60,40,15,0.9)',   stroke: 'rgba(255,180,80,0.7)',  glow: 'rgba(255,180,80,0.15)', label: '#fb8' },
+  forest: { fill: 'rgba(10,50,20,0.9)',   stroke: 'rgba(60,200,80,0.7)',   glow: 'rgba(60,200,80,0.15)',  label: '#6c6' },
+  _default: { fill: 'rgba(15,30,55,0.9)', stroke: 'rgba(60,120,200,0.4)', glow: 'rgba(60,120,200,0.08)', label: '#67a' }
+};
+
+function getTypeStyle(type) {
+  return TYPE_COLORS[type] || TYPE_COLORS._default;
+}
+
+function timeSince(isoStr) {
+  if (!isoStr) return 'unknown';
+  const d = new Date(isoStr);
+  const diff = (Date.now() - d.getTime()) / 1000;
+  if (diff < 60) return `${Math.floor(diff)}s ago`;
+  if (diff < 3600) return `${Math.floor(diff/60)}m ago`;
+  if (diff < 86400) return `${Math.floor(diff/3600)}h ago`;
+  return `${Math.floor(diff/86400)}d ago`;
+}
+
+function getTypeBadge(type) {
+  const emoji = TYPE_EMOJI[type] || '🏝️';
+  return `${emoji} ${type || 'island'}`;
+}
+
+function renderMap() {
+  const cw = canvas.width, ch = canvas.height;
+  ctx.clearRect(0, 0, cw, ch);
+
+  // Ocean background
+  const grad = ctx.createLinearGradient(0, 0, cw, ch);
+  grad.addColorStop(0, '#020820');
+  grad.addColorStop(0.5, '#041830');
+  grad.addColorStop(1, '#021020');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, cw, ch);
+
+  // Grid lines (ocean grid)
+  ctx.strokeStyle = 'rgba(40,80,120,0.2)';
+  ctx.lineWidth = 1;
+  for (let x = 0; x < cw; x += 60) {
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, ch); ctx.stroke();
+  }
+  for (let y = 0; y < ch; y += 60) {
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(cw, y); ctx.stroke();
+  }
+
+  // Draw wave shimmer
+  const t = Date.now();
+  ctx.strokeStyle = 'rgba(60,120,200,0.08)';
+  ctx.lineWidth = 1;
+  for (let i = 0; i < 6; i++) {
+    const y = (t / 3000 * 20 + i * 50) % (ch + 20) - 10;
+    ctx.beginPath();
+    for (let x = 0; x <= cw; x += 8) {
+      const wy = y + Math.sin(x / 30 + t / 1000) * 6;
+      if (x === 0) ctx.moveTo(x, wy); else ctx.lineTo(x, wy);
+    }
+    ctx.stroke();
+  }
+
+  if (islands.length === 0) {
+    ctx.fillStyle = 'rgba(80,120,180,0.4)';
+    ctx.font = '12px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('No islands registered yet. Be the first!', cw/2, ch/2);
+    requestAnimationFrame(renderMap);
+    return;
+  }
+
+  // Place islands in a scattered layout with collision avoidance
+  islandPositions = [];
+  const isMobile = cw < 500;
+  const padding = isMobile ? 35 : 50;
+  const usableW = cw - padding * 2;
+  const usableH = ch - padding * 2;
+  const RADIUS = isMobile ? 16 : 22;
+  const MIN_DIST = RADIUS * 4.5; // minimum distance between island centers
+
+  islands.forEach((island, i) => {
+    // Use a deterministic pseudo-random placement based on world_id hash
+    let hash = 0;
+    const key = island.world_id || String(i);
+    for (const c of key) hash = (hash * 31 + c.charCodeAt(0)) & 0xffffffff;
+    let x = padding + (Math.abs(hash * 1234567 % usableW));
+    let y = padding + (Math.abs(hash * 987654 % usableH));
+
+    // Push apart from existing islands (robust repulsion with more iterations)
+    for (let iter = 0; iter < 40; iter++) {
+      let moved = false;
+      for (const p of islandPositions) {
+        const dx = x - p.x, dy = y - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < MIN_DIST && dist > 0) {
+          const push = (MIN_DIST - dist) / 2 + 3;
+          const nx = dx / dist, ny = dy / dist;
+          x += nx * push;
+          y += ny * push;
+          moved = true;
+        }
+      }
+      // Clamp to canvas
+      x = Math.max(padding, Math.min(cw - padding, x));
+      y = Math.max(padding, Math.min(ch - padding, y));
+      if (!moved) break;
+    }
+
+    islandPositions.push({ x, y, island, radius: RADIUS });
+  });
+
+  // Draw connection lines between nearby islands
+  ctx.strokeStyle = 'rgba(80,180,255,0.06)';
+  ctx.lineWidth = 1;
+  ctx.setLineDash([4, 8]);
+  for (let i = 0; i < islandPositions.length; i++) {
+    for (let j = i+1; j < islandPositions.length; j++) {
+      const dx = islandPositions[i].x - islandPositions[j].x;
+      const dy = islandPositions[i].y - islandPositions[j].y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 180) {
+        ctx.beginPath();
+        ctx.moveTo(islandPositions[i].x, islandPositions[i].y);
+        ctx.lineTo(islandPositions[j].x, islandPositions[j].y);
+        ctx.stroke();
+      }
+    }
+  }
+  ctx.setLineDash([]);
+
+  // Draw islands
+  const glowRadius = isMobile ? 28 : 35;
+  const emojiSize = isMobile ? 12 : 14;
+  const lvFontSize = isMobile ? 6 : 7;
+  const labelFontSize = isMobile ? 7 : 8;
+  const maxLabelLen = isMobile ? 10 : 15;
+
+  islandPositions.forEach(({ x, y, island }) => {
+    const style = getTypeStyle(island.island_type);
+
+    // Glow
+    ctx.save();
+    const grd = ctx.createRadialGradient(x, y, 6, x, y, glowRadius);
+    grd.addColorStop(0, style.glow);
+    grd.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = grd;
+    ctx.beginPath(); ctx.arc(x, y, glowRadius, 0, Math.PI * 2); ctx.fill();
+
+    // Island circle
+    ctx.fillStyle = style.fill;
+    ctx.strokeStyle = style.stroke;
+    ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(x, y, RADIUS, 0, Math.PI * 2);
+    ctx.fill(); ctx.stroke();
+
+    // Avatar emoji
+    ctx.font = emojiSize + 'px serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(island.owner_avatar || '🦞', x, y - 2);
+
+    // Level badge (small text inside circle)
+    if (island.level) {
+      ctx.font = lvFontSize + 'px monospace';
+      ctx.fillStyle = style.label;
+      ctx.textBaseline = 'middle';
+      ctx.fillText('Lv.' + island.level, x, y + (isMobile ? 9 : 12));
+    }
+
+    // Name label (responsive truncation)
+    const rawName = island.name || 'Unnamed';
+    const displayName = rawName.length > maxLabelLen
+      ? rawName.slice(0, maxLabelLen - 1) + '…'
+      : rawName;
+    ctx.font = labelFontSize + 'px monospace';
+    ctx.fillStyle = style.label;
+    ctx.textBaseline = 'top';
+    ctx.fillText(displayName, x, y + RADIUS + 4);
+
+    ctx.restore();
+  });
+
+  requestAnimationFrame(renderMap);
+}
+
+// Click detection on canvas
+canvas.addEventListener('click', (e) => {
+  const rect = canvas.getBoundingClientRect();
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+  const mx = (e.clientX - rect.left) * scaleX;
+  const my = (e.clientY - rect.top) * scaleY;
+
+  for (const pos of islandPositions) {
+    const dx = mx - pos.x;
+    const dy = my - pos.y;
+    if (dx * dx + dy * dy <= pos.radius * pos.radius) {
+      window.location.href = '/island/' + pos.island.world_id;
+      return;
+    }
+  }
+});
+
+// Hover cursor on canvas
+canvas.addEventListener('mousemove', (e) => {
+  const rect = canvas.getBoundingClientRect();
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+  const mx = (e.clientX - rect.left) * scaleX;
+  const my = (e.clientY - rect.top) * scaleY;
+
+  let hovering = false;
+  for (const pos of islandPositions) {
+    const dx = mx - pos.x;
+    const dy = my - pos.y;
+    if (dx * dx + dy * dy <= pos.radius * pos.radius) {
+      hovering = true;
+      break;
+    }
+  }
+  canvas.style.cursor = hovering ? 'pointer' : 'default';
+});
+
+function renderIslandList() {
+  const container = document.getElementById('island-list-container');
+  if (islands.length === 0) {
+    container.innerHTML = `<div class="empty-state">
+      🌊 No islands registered yet!<br>
+      Your island gets listed here when visitors arrive.<br><br>
+      <a href="/" style="color:#4fa">← Go build your island</a>
+    </div>`;
+    return;
+  }
+
+  const html = `<div class="island-list">` + islands.map(island => {
+    const typeClass = TYPE_COLORS[island.island_type] ? 'type-' + island.island_type : 'type-default';
+    const typeEmoji = TYPE_EMOJI[island.island_type] || '🏝️';
+    const typeName = island.island_type || 'island';
+    return `
+    <div class="island-card" onclick="window.location.href='/island/${island.world_id}'">
+      <img class="thumb" src="/api/island/${island.world_id}/thumbnail" alt="${island.name || 'Island'}" onerror="this.style.display='none'">
+      <div class="card-body">
+        <div class="name">${island.owner_avatar || '🦞'} ${island.name || 'Unnamed Island'}</div>
+        <span class="type-badge ${typeClass}">${typeEmoji} ${typeName}</span>
+        <div class="meta">
+          ⭐ Lv.${island.level || 1} · 🏗️ ${island.objects_placed || 0} objects<br>
+          👁 ${(island.visit_count || 0).toLocaleString()} visits · 🕐 ${timeSince(island.updated_at)}<br>
+          👤 ${island.owner_name || 'anonymous'}
+        </div>
+        <a href="/island/${island.world_id}" class="visit-btn" onclick="event.stopPropagation()">🚢 Visit Island</a>
+      </div>
+    </div>`;
+  }).join('') + `</div>`;
+  container.innerHTML = html;
+}
+
+async function loadIslands() {
+  try {
+    const r = await fetch('/api/islands');
+    if (r.ok) {
+      const data = await r.json();
+      islands = data.islands || [];
+
+      // Sort by visit_count descending (most popular first)
+      islands.sort((a, b) => (b.visit_count || 0) - (a.visit_count || 0));
+
+      document.getElementById('island-count').textContent = islands.length;
+      const totalObj = islands.reduce((s, i) => s + (i.objects_placed || 0), 0);
+      document.getElementById('total-obj').textContent = totalObj.toLocaleString();
+
+      // Find most recently active
+      const active = islands.filter(i => i.updated_at).sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+      if (active.length > 0) {
+        document.getElementById('last-active').textContent = timeSince(active[0].updated_at) + ' (' + (active[0].name || 'unknown') + ')';
+      } else {
+        document.getElementById('last-active').textContent = 'never';
+      }
+
+      renderIslandList();
+    }
+  } catch(e) {
+    document.getElementById('island-list-container').innerHTML = `<div class="empty-state">⚠️ Could not load islands. <a href="/" style="color:#4fa">← Back</a></div>`;
+  }
+}
+
+loadIslands();
+renderMap();
+</script>
+<script>
+// i18n: Initialize language switcher for map page
+(function() {
+  if (typeof createLangSwitcher === 'function') {
+    createLangSwitcher('#map-lang-switcher');
+  }
+  window.addEventListener('langchange', function() {
+    document.title = t('page.title.map');
+  });
+})();
+</script>
+</body>
+</html>

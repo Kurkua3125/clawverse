@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📊 Island Analytics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #020614;
+    color: #aef;
+    font-family: monospace;
+    min-height: 100vh;
+    padding-bottom: 40px;
+  }
+  .header {
+    text-align: center;
+    padding: 24px 16px 12px;
+    border-bottom: 1px solid rgba(100,180,255,0.15);
+    background: rgba(4,12,32,0.9);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .header h1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 14px;
+    color: #4fa;
+    text-shadow: 0 0 20px rgba(80,255,160,0.5);
+    margin-bottom: 8px;
+  }
+  .back-btn {
+    display: inline-block;
+    padding: 5px 14px;
+    background: rgba(20,60,100,0.7);
+    border: 1px solid rgba(100,180,255,0.3);
+    border-radius: 16px;
+    color: #aef;
+    text-decoration: none;
+    font-size: 11px;
+    font-family: monospace;
+    transition: background .2s;
+  }
+  .back-btn:hover { background: rgba(40,100,160,0.8); }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .stat-card {
+    background: rgba(8,20,40,0.85);
+    border: 1px solid rgba(100,180,255,0.2);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+  }
+  .stat-card .val {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 22px;
+    color: #4fa;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .stat-card .lbl {
+    font-size: 10px;
+    color: #678;
+  }
+  .section {
+    background: rgba(8,20,40,0.85);
+    border: 1px solid rgba(100,180,255,0.2);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .section h2 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    color: #4fa;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(100,180,255,0.1);
+  }
+  canvas.chart { display: block; width: 100%; }
+  .visitor-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(100,180,255,0.07);
+    font-size: 11px;
+  }
+  .visitor-row:last-child { border-bottom: none; }
+  .visitor-bar-bg {
+    flex: 1;
+    background: rgba(20,40,80,0.5);
+    border-radius: 4px;
+    height: 8px;
+    overflow: hidden;
+  }
+  .visitor-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2a8, #4fa);
+    border-radius: 4px;
+    transition: width .5s ease;
+  }
+  .visitor-name { width: 120px; color: #aef; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .visitor-cnt { width: 30px; text-align: right; color: #678; }
+  .progress-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(100,180,255,0.07);
+    font-size: 11px;
+  }
+  .progress-row:last-child { border-bottom: none; }
+  .progress-row .key { color: #678; }
+  .progress-row .val { color: #4fa; font-weight: bold; }
+  .loading { text-align: center; padding: 40px; color: #456; font-size: 11px; }
+  .empty { text-align: center; padding: 20px; color: #456; font-size: 10px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>📊 Island Analytics</h1>
+  <a href="/" class="back-btn">← Back to Island</a>
+</div>
+
+<div class="container">
+  <div id="stats-grid" class="grid">
+    <div class="stat-card"><span class="val" id="stat-visits">—</span><div class="lbl">Total Visits</div></div>
+    <div class="stat-card"><span class="val" id="stat-level">—</span><div class="lbl">Island Level</div></div>
+    <div class="stat-card"><span class="val" id="stat-tiles">—</span><div class="lbl">Tiles Placed</div></div>
+    <div class="stat-card"><span class="val" id="stat-objects">—</span><div class="lbl">Objects Placed</div></div>
+    <div class="stat-card"><span class="val" id="stat-xp">—</span><div class="lbl">Total XP</div></div>
+    <div class="stat-card"><span class="val" id="stat-evolutions">—</span><div class="lbl">Evolutions</div></div>
+  </div>
+
+  <div class="section">
+    <h2>📈 Visits (last 14 days)</h2>
+    <canvas id="visits-chart" class="chart" height="160"></canvas>
+    <div id="chart-empty" class="empty" style="display:none">No visit data yet</div>
+  </div>
+
+  <div class="section">
+    <h2>👥 Top Visitors</h2>
+    <div id="top-visitors">
+      <div class="loading">Loading...</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🕐 Hourly Activity (last 14 days)</h2>
+    <canvas id="heatmap-chart" class="chart" height="140"></canvas>
+    <div id="heatmap-empty" class="empty" style="display:none">No activity data yet</div>
+  </div>
+
+  <div class="section">
+    <h2>🏝️ Island Progress</h2>
+    <div id="progress-details">
+      <div class="loading">Loading...</div>
+    </div>
+  </div>
+</div>
+
+<script>
+async function loadAnalytics() {
+  try {
+    const r = await fetch('/api/analytics/overview');
+    if (!r.ok) throw new Error('API error');
+    const d = await r.json();
+
+    // Stats
+    document.getElementById('stat-visits').textContent = d.total_visits || 0;
+    document.getElementById('stat-level').textContent = d.progress.level || 1;
+    document.getElementById('stat-tiles').textContent = d.progress.tiles_placed || 0;
+    document.getElementById('stat-objects').textContent = d.progress.objects_placed || 0;
+    document.getElementById('stat-xp').textContent = d.progress.xp || 0;
+    document.getElementById('stat-evolutions').textContent = d.evolutions_applied || 0;
+
+    // Visits chart
+    renderBarChart('visits-chart', d.daily_visits || [], 'day', 'cnt', 'chart-empty');
+
+    // Top visitors
+    renderTopVisitors(d.top_visitors || []);
+
+    // Hourly heatmap
+    renderHeatmap('heatmap-chart', d.hourly_heatmap || [], 'heatmap-empty');
+
+    // Progress details
+    renderProgressDetails(d.progress || {});
+  } catch (e) {
+    document.getElementById('top-visitors').innerHTML = `<div class="empty">⚠️ Could not load analytics</div>`;
+  }
+}
+
+function renderBarChart(canvasId, data, labelKey, valueKey, emptyId) {
+  const canvas = document.getElementById(canvasId);
+  if (!data || data.length === 0) {
+    canvas.style.display = 'none';
+    const emptyEl = document.getElementById(emptyId);
+    if (emptyEl) emptyEl.style.display = 'block';
+    return;
+  }
+  canvas.width = canvas.offsetWidth || 700;
+  const cw = canvas.width, ch = canvas.height;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, cw, ch);
+
+  const maxVal = Math.max(...data.map(d => d[valueKey])) || 1;
+  const padL = 32, padR = 10, padT = 10, padB = 30;
+  const barW = Math.max(4, (cw - padL - padR) / data.length - 4);
+  const chartH = ch - padT - padB;
+
+  // Background grid
+  ctx.strokeStyle = 'rgba(100,180,255,0.07)';
+  ctx.lineWidth = 1;
+  for (let i = 0; i <= 4; i++) {
+    const y = padT + chartH * (1 - i / 4);
+    ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(cw - padR, y); ctx.stroke();
+    // Y-axis label
+    ctx.fillStyle = '#456';
+    ctx.font = '9px monospace';
+    ctx.textAlign = 'right';
+    ctx.fillText(Math.round(maxVal * i / 4), padL - 4, y + 3);
+  }
+
+  // Bars
+  data.forEach((item, i) => {
+    const barH = (item[valueKey] / maxVal) * chartH;
+    const x = padL + i * ((cw - padL - padR) / data.length) + 2;
+    const y = padT + chartH - barH;
+
+    const grad = ctx.createLinearGradient(0, y, 0, y + barH);
+    grad.addColorStop(0, 'rgba(80,255,160,0.9)');
+    grad.addColorStop(1, 'rgba(20,160,80,0.4)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(x, y, barW, barH);
+
+    // Value label on top
+    if (item[valueKey] > 0) {
+      ctx.fillStyle = '#4fa';
+      ctx.font = '8px monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText(item[valueKey], x + barW/2, y - 3);
+    }
+
+    // X label (show every 2nd if many)
+    if (i % Math.max(1, Math.floor(data.length / 7)) === 0) {
+      ctx.fillStyle = '#456';
+      ctx.font = '8px monospace';
+      ctx.textAlign = 'center';
+      const lbl = String(item[labelKey]).slice(-5); // last 5 chars of date
+      ctx.fillText(lbl, x + barW/2, ch - 4);
+    }
+  });
+}
+
+function renderHeatmap(canvasId, data, emptyId) {
+  const canvas = document.getElementById(canvasId);
+  if (!data || data.length === 0 || data.every(d => d.cnt === 0)) {
+    canvas.style.display = 'none';
+    const emptyEl = document.getElementById(emptyId);
+    if (emptyEl) emptyEl.style.display = 'block';
+    return;
+  }
+  canvas.width = canvas.offsetWidth || 700;
+  const cw = canvas.width, ch = canvas.height;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, cw, ch);
+
+  const maxVal = Math.max(...data.map(d => d.cnt)) || 1;
+  const padL = 32, padR = 10, padT = 10, padB = 30;
+  const cellW = (cw - padL - padR) / 24;
+  const chartH = ch - padT - padB;
+
+  // Background grid
+  ctx.strokeStyle = 'rgba(100,180,255,0.07)';
+  ctx.lineWidth = 1;
+  for (let i = 0; i <= 4; i++) {
+    const y = padT + chartH * (1 - i / 4);
+    ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(cw - padR, y); ctx.stroke();
+    ctx.fillStyle = '#456';
+    ctx.font = '9px monospace';
+    ctx.textAlign = 'right';
+    ctx.fillText(Math.round(maxVal * i / 4), padL - 4, y + 3);
+  }
+
+  // Bars with heat coloring
+  data.forEach((item) => {
+    const h = item.hour;
+    const barH = (item.cnt / maxVal) * chartH;
+    const x = padL + h * cellW + 2;
+    const y = padT + chartH - barH;
+    const barW = Math.max(4, cellW - 4);
+
+    // Color intensity based on activity level
+    const intensity = item.cnt / maxVal;
+    const r = Math.round(20 + intensity * 60);
+    const g = Math.round(80 + intensity * 175);
+    const b = Math.round(80 + intensity * 80);
+    const grad = ctx.createLinearGradient(0, y, 0, y + barH);
+    grad.addColorStop(0, `rgba(${r},${g},${b},0.95)`);
+    grad.addColorStop(1, `rgba(${r},${g},${b},0.35)`);
+    ctx.fillStyle = grad;
+    ctx.fillRect(x, y, barW, barH);
+
+    // Value on top
+    if (item.cnt > 0) {
+      ctx.fillStyle = '#4fa';
+      ctx.font = '8px monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText(item.cnt, x + barW / 2, y - 3);
+    }
+
+    // Hour label
+    if (h % 3 === 0) {
+      ctx.fillStyle = '#456';
+      ctx.font = '8px monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText(String(h).padStart(2, '0'), x + barW / 2, ch - 4);
+    }
+  });
+}
+
+function renderTopVisitors(visitors) {
+  const container = document.getElementById('top-visitors');
+  if (!visitors || visitors.length === 0) {
+    container.innerHTML = '<div class="empty">No visitors yet — share your island!</div>';
+    return;
+  }
+  const maxCnt = Math.max(...visitors.map(v => v.cnt)) || 1;
+  container.innerHTML = visitors.map(v => `
+    <div class="visitor-row">
+      <div class="visitor-name">${escHtml(v.from_name || 'Anonymous')}</div>
+      <div class="visitor-bar-bg">
+        <div class="visitor-bar-fill" style="width:${Math.round(v.cnt / maxCnt * 100)}%"></div>
+      </div>
+      <div class="visitor-cnt">${v.cnt}</div>
+    </div>
+  `).join('');
+}
+
+function renderProgressDetails(progress) {
+  const container = document.getElementById('progress-details');
+  if (!progress || !progress.world_id) {
+    container.innerHTML = '<div class="empty">No progress data</div>';
+    return;
+  }
+  const xpToNext = progress.level * 100;
+  const pct = progress.xp ? Math.round(progress.xp / xpToNext * 100) : 0;
+  container.innerHTML = `
+    <div class="progress-row"><span class="key">Level</span><span class="val">${progress.level || 1}</span></div>
+    <div class="progress-row"><span class="key">XP (this level)</span><span class="val">${progress.xp || 0} / ${xpToNext} (${pct}%)</span></div>
+    <div class="progress-row"><span class="key">Tiles Placed</span><span class="val">${progress.tiles_placed || 0}</span></div>
+    <div class="progress-row"><span class="key">Objects Placed</span><span class="val">${progress.objects_placed || 0}</span></div>
+    <div class="progress-row"><span class="key">Visits Received</span><span class="val">${progress.visits_received || 0}</span></div>
+  `;
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+loadAnalytics();
+// Auto-refresh every 30s
+setInterval(loadAnalytics, 30000);
+</script>
+</body>
+</html>

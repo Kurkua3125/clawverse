@@ -1,0 +1,37 @@
+{
+  "A5-ECONOMY": {
+    "status": "done",
+    "agent": 5,
+    "summary": "Economy rebalanced: starter 200\ud83d\udc8e (new users), crop rewards increased (carrot 15, potato 20, turnip 25, cabbage 30, pumpkin 50), daily login 10\ud83d\udc8e, claw work search 5/generate 8/analyze 5/chat 2"
+  },
+  "A5-GUIDE": {
+    "status": "done",
+    "agent": 5,
+    "summary": "Hint tooltip system for new users: 2 auto-dismissing overlays (barn hint at 3s, build hint at 5s), localStorage-gated via hints_shown key"
+  },
+  "F1-PLOTS": {
+    "status": "done",
+    "agent": "A",
+    "summary": "3D rounded soil plots with depth shadows, warm gradients, furrow lines, ripe golden glow"
+  },
+  "F3-BACKGROUND": {
+    "status": "done",
+    "agent": "A",
+    "summary": "FarmVille warm golden sky gradient, sun with glow, distant hills, grass texture patches"
+  },
+  "F4-COLORS": {
+    "status": "done",
+    "agent": "A",
+    "summary": "Golden title with shadow, warm stats bar pill, warm brown 3D fence with post highlights"
+  },
+  "F2-CROPS": {
+    "status": "done",
+    "agent": "B",
+    "summary": "AI-generated crop images replacing emoji: carrot (3 stages), cabbage/pumpkin (ripe), generic seedling/growing. Images loaded via loadImg with emoji fallback."
+  },
+  "S26-MINIMAP-ZINDEX-CLEANUP": {
+    "status": "done",
+    "agent": "A",
+    "summary": "Fixed weather badge overlapping minimap (repositioned above), barn crop labels now drawn in deferred pass above all terrain, removed 7 AI test objects (robot/skull/castle/etc), bottombar confirmed working"
+  }
+}

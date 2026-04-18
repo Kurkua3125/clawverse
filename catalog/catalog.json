@@ -1,0 +1,3009 @@
+{
+  "terrain": [
+    {
+      "id": "grass_plain",
+      "name": "Grass Plain",
+      "category": "grass",
+      "file": "terrain/grass_plain.png"
+    },
+    {
+      "id": "grass_dark",
+      "name": "Grass Dark",
+      "category": "grass",
+      "file": "terrain/grass_dark.png"
+    },
+    {
+      "id": "grass_flowers",
+      "name": "Grass Flowers",
+      "category": "grass",
+      "file": "terrain/grass_flowers.png"
+    },
+    {
+      "id": "water_deep",
+      "name": "Water Deep",
+      "category": "water",
+      "file": "terrain/water_deep.png"
+    },
+    {
+      "id": "water_shallow",
+      "name": "Water Shallow",
+      "category": "water",
+      "file": "terrain/water_shallow.png"
+    },
+    {
+      "id": "sand_plain",
+      "name": "Sand Plain",
+      "category": "sand",
+      "file": "terrain/sand_plain.png"
+    },
+    {
+      "id": "sand_shells",
+      "name": "Sand Shells",
+      "category": "sand",
+      "file": "terrain/sand_shells.png"
+    },
+    {
+      "id": "dirt_plain",
+      "name": "Dirt Plain",
+      "category": "dirt",
+      "file": "terrain/dirt_plain.png"
+    },
+    {
+      "id": "dirt_path",
+      "name": "Dirt Path",
+      "category": "dirt",
+      "file": "terrain/dirt_path.png"
+    },
+    {
+      "id": "stone_plain",
+      "name": "Stone Plain",
+      "category": "stone",
+      "file": "terrain/stone_plain.png"
+    },
+    {
+      "id": "stone_mossy",
+      "name": "Stone Mossy",
+      "category": "stone",
+      "file": "terrain/stone_mossy.png"
+    },
+    {
+      "id": "grass_block",
+      "name": "Grass Block",
+      "category": "block",
+      "file": "terrain/grass_block.png"
+    },
+    {
+      "id": "stone_block",
+      "name": "Stone Block",
+      "category": "block",
+      "file": "terrain/stone_block.png"
+    },
+    {
+      "id": "sand_block",
+      "name": "Sand Block",
+      "category": "block",
+      "file": "terrain/sand_block.png"
+    },
+    {
+      "id": "dirt_block",
+      "name": "Dirt Block",
+      "category": "block",
+      "file": "terrain/dirt_block.png"
+    },
+    {
+      "id": "pond",
+      "name": "Pond",
+      "category": "water",
+      "file": "terrain/pond.png"
+    },
+    {
+      "id": "cliff_edge_n",
+      "name": "Cliff Edge North",
+      "category": "cliff",
+      "file": "terrain/cliff_edge_n.png"
+    },
+    {
+      "id": "grass_night",
+      "name": "Night Grass",
+      "category": "grass_night",
+      "file": "terrain/grass_night.png"
+    },
+    {
+      "id": "water_deep_night",
+      "name": "Night Deep Water",
+      "category": "water_night",
+      "file": "terrain/water_deep_night.png"
+    },
+    {
+      "id": "water_shallow_night",
+      "name": "Night Shallow Water",
+      "category": "water_night",
+      "file": "terrain/water_shallow_night.png"
+    },
+    {
+      "id": "sand_night",
+      "name": "Night Sand",
+      "category": "sand_night",
+      "file": "terrain/sand_night.png"
+    },
+    {
+      "id": "stone_night",
+      "name": "Night Stone",
+      "category": "stone_night",
+      "file": "terrain/stone_night.png"
+    },
+    {
+      "id": "grass_snow",
+      "name": "Snow Grass",
+      "category": "grass_seasonal",
+      "file": "terrain/grass_snow.png"
+    },
+    {
+      "id": "grass_cherry",
+      "name": "Cherry Blossom Grass",
+      "category": "grass_seasonal",
+      "file": "terrain/grass_cherry.png"
+    },
+    {
+      "id": "sand_snow",
+      "name": "Frozen Sand",
+      "category": "sand_seasonal",
+      "file": "terrain/sand_snow.png"
+    },
+    {
+      "id": "grass_autumn",
+      "name": "Autumn Grass",
+      "category": "grass_seasonal",
+      "file": "terrain/grass_autumn.png"
+    },
+    {
+      "id": "waterfall",
+      "name": "Waterfall",
+      "category": "water",
+      "file": "terrain/waterfall.png"
+    },
+    {
+      "id": "farmland_dry",
+      "name": "Farmland (Dry)",
+      "category": "farm",
+      "file": "terrain/farmland_dry.png"
+    },
+    {
+      "id": "farmland_wet",
+      "name": "Farmland (Wet)",
+      "category": "farm",
+      "file": "terrain/farmland_wet.png"
+    },
+    {
+      "id": "field_green",
+      "name": "Green Field",
+      "category": "farm",
+      "file": "terrain/field_green.png"
+    },
+    {
+      "id": "harvest_done",
+      "name": "Harvested Field",
+      "category": "farm",
+      "file": "terrain/harvest_done.png"
+    },
+    {
+      "id": "farm_soil",
+      "name": "Farm Soil",
+      "category": "farm",
+      "file": "terrain/farm_soil.png"
+    },
+    {
+      "id": "farm_soil_wet",
+      "name": "Farm Soil (Wet)",
+      "category": "farm",
+      "file": "terrain/farm_soil_wet.png"
+    },
+    {
+      "id": "castle_floor",
+      "name": "Castle Floor",
+      "category": "castle",
+      "file": "terrain/castle_floor.png"
+    },
+    {
+      "id": "castle_wall",
+      "name": "Castle Wall",
+      "category": "castle",
+      "file": "terrain/castle_wall.png"
+    },
+    {
+      "id": "castle_carpet",
+      "name": "Castle Carpet",
+      "category": "castle",
+      "file": "terrain/castle_carpet.png"
+    },
+    {
+      "id": "wood_floor",
+      "name": "Wood Floor",
+      "category": "indoor",
+      "file": "terrain/wood_floor.png"
+    },
+    {
+      "id": "tile_floor",
+      "name": "Tile Floor",
+      "category": "indoor",
+      "file": "terrain/tile_floor.png"
+    },
+    {
+      "id": "carpet_blue",
+      "name": "Blue Carpet",
+      "category": "indoor",
+      "file": "terrain/carpet_blue.png"
+    },
+    {
+      "id": "zen_sand",
+      "name": "Zen Sand",
+      "category": "japanese",
+      "file": "terrain/zen_sand.png"
+    },
+    {
+      "id": "moss_stone",
+      "name": "Mossy Stone",
+      "category": "japanese",
+      "file": "terrain/moss_stone.png"
+    },
+    {
+      "id": "bamboo_floor",
+      "name": "Bamboo Floor",
+      "category": "japanese",
+      "file": "terrain/bamboo_floor.png"
+    },
+    {
+      "id": "metal_floor",
+      "name": "Metal Floor",
+      "category": "space",
+      "file": "terrain/metal_floor.png"
+    },
+    {
+      "id": "space_glass",
+      "name": "Space Glass",
+      "category": "space",
+      "file": "terrain/space_glass.png"
+    }
+  ],
+  "objects": [
+    {
+      "id": "tree_oak",
+      "name": "Tree Oak",
+      "category": "nature",
+      "file": "objects/tree_oak.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "tree_pine",
+      "name": "Tree Pine",
+      "category": "nature",
+      "file": "objects/tree_pine.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "tree_palm",
+      "name": "Tree Palm",
+      "category": "nature",
+      "file": "objects/tree_palm.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "house_cottage",
+      "name": "Cottage",
+      "category": "structure",
+      "file": "objects/house_cottage.png",
+      "footprint": [
+        2,
+        2
+      ],
+      "walkable": false,
+      "size": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "campfire",
+      "name": "Campfire",
+      "category": "nature",
+      "file": "objects/campfire.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "rock_big",
+      "name": "Rock Big",
+      "category": "nature",
+      "file": "objects/rock_big.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "mailbox",
+      "name": "Mailbox",
+      "category": "furniture",
+      "file": "objects/mailbox.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "sign_wood",
+      "name": "Sign Wood",
+      "category": "furniture",
+      "file": "objects/sign_wood.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "bench",
+      "name": "Bench",
+      "category": "furniture",
+      "file": "objects/bench.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "flower_patch",
+      "name": "Flower Patch",
+      "category": "nature",
+      "file": "objects/flower_patch.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "lantern",
+      "name": "Lantern",
+      "category": "furniture",
+      "file": "objects/lantern.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "ai_a_cozy_wooden_bookshelf__070301",
+      "name": "A Cozy Wooden Bookshelf Full O",
+      "category": "furniture",
+      "file": "objects/ai_a_cozy_wooden_bookshelf__070301.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "a cozy wooden bookshelf full of colorful books"
+    },
+    {
+      "id": "dock_plank",
+      "name": "Dock Plank",
+      "category": "structure",
+      "file": "objects/dock_plank.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "fence_wood",
+      "name": "Wooden Fence",
+      "category": "structure",
+      "file": "objects/fence_wood.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "barrel",
+      "name": "Barrel",
+      "category": "furniture",
+      "file": "objects/barrel.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "chest",
+      "name": "Treasure Chest",
+      "category": "furniture",
+      "file": "objects/chest.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "table_wood",
+      "name": "Wooden Table",
+      "category": "furniture",
+      "file": "objects/table_wood.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "well",
+      "name": "Stone Well",
+      "category": "structure",
+      "file": "objects/well.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "bridge_wood",
+      "name": "Wooden Bridge",
+      "category": "structure",
+      "file": "objects/bridge_wood.png",
+      "footprint": [
+        2,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "gate",
+      "name": "Wooden Gate",
+      "category": "structure",
+      "file": "objects/gate.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "lighthouse",
+      "name": "Lighthouse",
+      "category": "structure",
+      "file": "objects/lighthouse.png",
+      "footprint": [
+        1,
+        2
+      ],
+      "walkable": false,
+      "size": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "flower_gate",
+      "name": "Flower Gate",
+      "category": "decoration",
+      "file": "objects/flower_gate.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "pond",
+      "name": "Garden Pond",
+      "category": "water",
+      "file": "objects/pond.png",
+      "footprint": [
+        2,
+        2
+      ],
+      "walkable": false
+    },
+    {
+      "id": "treasure_map",
+      "name": "Treasure Map",
+      "category": "decoration",
+      "file": "objects/treasure_map.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "fountain",
+      "name": "Fountain",
+      "category": "structure",
+      "file": "objects/fountain.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "statue",
+      "name": "Crab Statue",
+      "category": "decoration",
+      "file": "objects/statue.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "swing",
+      "name": "Garden Swing",
+      "category": "furniture",
+      "file": "objects/swing.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "stone_bridge",
+      "name": "Stone Bridge",
+      "category": "structure",
+      "file": "objects/stone_bridge.png",
+      "footprint": [
+        2,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "turnip",
+      "name": "Turnip",
+      "category": "crop",
+      "file": "objects/turnip.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "crop_growing",
+      "name": "Growing Crop",
+      "category": "crop",
+      "file": "objects/crop_growing.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "crop_ripe",
+      "name": "Ripe Crop",
+      "category": "crop",
+      "file": "objects/crop_ripe.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "crop_seedling",
+      "file": "objects/crop_seedling.png",
+      "name": "Seedling",
+      "category": "crop",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "crop_carrot_seed",
+      "name": "Carrot (seed)",
+      "category": "crop",
+      "file": "objects/crop_carrot_seed.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "crop_carrot_sprout",
+      "name": "Carrot (sprout)",
+      "category": "crop",
+      "file": "objects/crop_carrot_sprout.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "crop_carrot_growing",
+      "name": "Carrot (growing)",
+      "category": "crop",
+      "file": "objects/crop_carrot_growing.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "crop_carrot_ripe",
+      "name": "Carrot (ripe)",
+      "category": "crop",
+      "file": "objects/crop_carrot_ripe.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "crop_potato_seed",
+      "name": "Potato (seed)",
+      "category": "crop",
+      "file": "objects/crop_potato_seed.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "crop_potato_sprout",
+      "name": "Potato (sprout)",
+      "category": "crop",
+      "file": "objects/crop_potato_sprout.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "crop_potato_growing",
+      "name": "Potato (growing)",
+      "category": "crop",
+      "file": "objects/crop_potato_growing.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "crop_potato_ripe",
+      "name": "Potato (ripe)",
+      "category": "crop",
+      "file": "objects/crop_potato_ripe.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "crop_turnip_seed",
+      "name": "Turnip (seed)",
+      "category": "crop",
+      "file": "objects/crop_turnip_seed.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "crop_turnip_sprout",
+      "name": "Turnip (sprout)",
+      "category": "crop",
+      "file": "objects/crop_turnip_sprout.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "crop_turnip_growing",
+      "name": "Turnip (growing)",
+      "category": "crop",
+      "file": "objects/crop_turnip_growing.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "crop_turnip_ripe",
+      "name": "Turnip (ripe)",
+      "category": "crop",
+      "file": "objects/crop_turnip_ripe.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "campfire_f0",
+      "name": "Campfire Frame 0",
+      "category": "special",
+      "file": "objects/campfire_f0.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "campfire_f1",
+      "name": "Campfire Frame 1",
+      "category": "special",
+      "file": "objects/campfire_f1.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "campfire_f2",
+      "name": "Campfire Frame 2",
+      "category": "special",
+      "file": "objects/campfire_f2.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "campfire_f3",
+      "name": "Campfire Frame 3",
+      "category": "special",
+      "file": "objects/campfire_f3.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "house_cottage_ai",
+      "name": "Cottage (AI)",
+      "category": "build",
+      "file": "objects/house_cottage_ai.png",
+      "footprint": [
+        2,
+        2
+      ],
+      "walkable": false,
+      "size": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "tree_oak_ai",
+      "name": "Oak Tree (AI)",
+      "category": "nature",
+      "file": "objects/tree_oak_ai.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "well_ai",
+      "name": "Well (AI)",
+      "category": "build",
+      "file": "objects/well_ai.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "campfire_ai",
+      "name": "Campfire (AI)",
+      "category": "special",
+      "file": "objects/campfire_ai.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "mailbox_ai",
+      "name": "Mailbox (AI)",
+      "category": "build",
+      "file": "objects/mailbox_ai.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "ai_castle_113801",
+      "name": "Castle",
+      "category": "custom",
+      "file": "objects/ai_castle_113801.png",
+      "footprint": [
+        2,
+        2
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "castle",
+      "size": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "garden_large",
+      "name": "Flower Garden",
+      "category": "nature",
+      "file": "objects/garden_large.png",
+      "footprint": [
+        2,
+        2
+      ],
+      "walkable": false
+    },
+    {
+      "id": "bridge_wood_large",
+      "name": "Wood Bridge",
+      "category": "structure",
+      "file": "objects/bridge_wood_large.png",
+      "footprint": [
+        2,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "ai_rainbow_tower_142551",
+      "name": "Rainbow Tower",
+      "category": "custom",
+      "file": "objects/ai_rainbow_tower_142551.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "rainbow tower"
+    },
+    {
+      "id": "ai_waterfall_142609",
+      "name": "Waterfall",
+      "category": "custom",
+      "file": "objects/ai_waterfall_142609.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "waterfall"
+    },
+    {
+      "id": "ai__________144425",
+      "name": "一个比较大的雕塑",
+      "category": "custom",
+      "file": "objects/ai__________144425.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "一个比较大的雕塑"
+    },
+    {
+      "id": "ai________144457",
+      "name": "一个大的熊猫",
+      "category": "custom",
+      "file": "objects/ai________144457.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "一个大的熊猫"
+    },
+    {
+      "id": "throne",
+      "name": "Golden Throne",
+      "category": "castle",
+      "file": "objects/throne.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "torch_wall",
+      "name": "Wall Torch",
+      "category": "castle",
+      "file": "objects/torch_wall.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "armor_stand",
+      "name": "Armor Stand",
+      "category": "castle",
+      "file": "objects/armor_stand.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "banner_red",
+      "name": "Red Banner",
+      "category": "castle",
+      "file": "objects/banner_red.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "castle_gate",
+      "name": "Castle Gate",
+      "category": "castle",
+      "file": "objects/castle_gate.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "sofa",
+      "name": "Sofa",
+      "category": "indoor",
+      "file": "objects/sofa.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "tv",
+      "name": "Television",
+      "category": "indoor",
+      "file": "objects/tv.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "bookcase",
+      "name": "Bookcase",
+      "category": "indoor",
+      "file": "objects/bookcase.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "dining_table",
+      "name": "Dining Table",
+      "category": "indoor",
+      "file": "objects/dining_table.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "lamp_floor",
+      "name": "Floor Lamp",
+      "category": "indoor",
+      "file": "objects/lamp_floor.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "window_curtains",
+      "name": "Window",
+      "category": "indoor",
+      "file": "objects/window_curtains.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "door_interior",
+      "name": "Interior Door",
+      "category": "indoor",
+      "file": "objects/door_interior.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "torii_gate",
+      "name": "Torii Gate",
+      "category": "japanese",
+      "file": "objects/torii_gate.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": true
+    },
+    {
+      "id": "stone_lantern",
+      "name": "Stone Lantern",
+      "category": "japanese",
+      "file": "objects/stone_lantern.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "bonsai",
+      "name": "Bonsai Tree",
+      "category": "japanese",
+      "file": "objects/bonsai.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "koi_pond",
+      "name": "Koi Pond",
+      "category": "japanese",
+      "file": "objects/koi_pond.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "bamboo_cluster",
+      "name": "Bamboo Cluster",
+      "category": "japanese",
+      "file": "objects/bamboo_cluster.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "control_panel",
+      "name": "Control Panel",
+      "category": "space",
+      "file": "objects/control_panel.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "antenna",
+      "name": "Satellite Antenna",
+      "category": "space",
+      "file": "objects/antenna.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "space_plant",
+      "name": "Bio-dome Plant",
+      "category": "space",
+      "file": "objects/space_plant.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "robot",
+      "name": "Robot Companion",
+      "category": "space",
+      "file": "objects/robot.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "crop_carrot_0",
+      "name": "Carrot Stage 0",
+      "file": "objects/crop_carrot_0.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_carrot_1",
+      "name": "Carrot Stage 1",
+      "file": "objects/crop_carrot_1.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_carrot_2",
+      "name": "Carrot Stage 2",
+      "file": "objects/crop_carrot_2.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_carrot_3",
+      "name": "Carrot Stage 3",
+      "file": "objects/crop_carrot_3.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_potato_0",
+      "name": "Potato Stage 0",
+      "file": "objects/crop_potato_0.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_potato_1",
+      "name": "Potato Stage 1",
+      "file": "objects/crop_potato_1.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_potato_2",
+      "name": "Potato Stage 2",
+      "file": "objects/crop_potato_2.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_potato_3",
+      "name": "Potato Stage 3",
+      "file": "objects/crop_potato_3.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_cabbage_0",
+      "name": "Cabbage Stage 0",
+      "file": "objects/crop_cabbage_0.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_cabbage_1",
+      "name": "Cabbage Stage 1",
+      "file": "objects/crop_cabbage_1.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_cabbage_2",
+      "name": "Cabbage Stage 2",
+      "file": "objects/crop_cabbage_2.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_cabbage_3",
+      "name": "Cabbage Stage 3",
+      "file": "objects/crop_cabbage_3.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_pumpkin_0",
+      "name": "Pumpkin Stage 0",
+      "file": "objects/crop_pumpkin_0.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_pumpkin_1",
+      "name": "Pumpkin Stage 1",
+      "file": "objects/crop_pumpkin_1.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_pumpkin_2",
+      "name": "Pumpkin Stage 2",
+      "file": "objects/crop_pumpkin_2.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_pumpkin_3",
+      "name": "Pumpkin Stage 3",
+      "file": "objects/crop_pumpkin_3.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_turnip_0",
+      "name": "Turnip Stage 0",
+      "file": "objects/crop_turnip_0.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_turnip_1",
+      "name": "Turnip Stage 1",
+      "file": "objects/crop_turnip_1.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_turnip_2",
+      "name": "Turnip Stage 2",
+      "file": "objects/crop_turnip_2.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "crop_turnip_3",
+      "name": "Turnip Stage 3",
+      "file": "objects/crop_turnip_3.png",
+      "category": "crop",
+      "cost": 0
+    },
+    {
+      "id": "ai________054702",
+      "name": "一个自由女神",
+      "category": "custom",
+      "file": "objects/ai________054702.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "一个自由女神"
+    },
+    {
+      "id": "tank",
+      "name": "Military Tank",
+      "category": "special",
+      "file": "objects/tank.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false
+    },
+    {
+      "id": "ai_a_neon_casino_sign_with__143007",
+      "name": "A Neon Casino Sign With Bright",
+      "category": "custom",
+      "file": "objects/ai_a_neon_casino_sign_with__143007.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A neon casino sign with bright lights saying JACKPOT"
+    },
+    {
+      "id": "ai_a_slot_machine_with_gold_143024",
+      "name": "A Slot Machine With Golden Coi",
+      "category": "custom",
+      "file": "objects/ai_a_slot_machine_with_gold_143024.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A slot machine with golden coins"
+    },
+    {
+      "id": "ai_a_glowing_neon_casino_si_143036",
+      "name": "A Glowing Neon Casino Sign Wit",
+      "category": "custom",
+      "file": "objects/ai_a_glowing_neon_casino_si_143036.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A glowing neon casino sign with bright pink and gold lights, Las Vegas style"
+    },
+    {
+      "id": "ai_a_tall_slot_machine_with_143048",
+      "name": "A Tall Slot Machine With Jackp",
+      "category": "custom",
+      "file": "objects/ai_a_tall_slot_machine_with_143048.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A tall slot machine with jackpot display and colorful lights"
+    },
+    {
+      "id": "ai_a_roulette_wheel_with_re_143045",
+      "name": "A Roulette Wheel With Red And ",
+      "category": "custom",
+      "file": "objects/ai_a_roulette_wheel_with_re_143045.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A roulette wheel with red and black"
+    },
+    {
+      "id": "ai_a_luxurious_golden_roule_143116",
+      "name": "A Luxurious Golden Roulette Wh",
+      "category": "custom",
+      "file": "objects/ai_a_luxurious_golden_roule_143116.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A luxurious golden roulette wheel table with green felt"
+    },
+    {
+      "id": "ai_golden_roulette_table_143131",
+      "name": "Golden Roulette Table",
+      "category": "custom",
+      "file": "objects/ai_golden_roulette_table_143131.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "Golden roulette table"
+    },
+    {
+      "id": "ai_showgirl_feather_headdre_143343",
+      "name": "Showgirl Feather Headdress Dec",
+      "category": "custom",
+      "file": "objects/ai_showgirl_feather_headdre_143343.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "Showgirl feather headdress decoration"
+    },
+    {
+      "id": "ai_poker_chips_stack_with_g_143343",
+      "name": "Poker Chips Stack With Gold An",
+      "category": "custom",
+      "file": "objects/ai_poker_chips_stack_with_g_143343.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "Poker chips stack with gold and red chips"
+    },
+    {
+      "id": "ai_neon_welcome_sign_saying_143343",
+      "name": "Neon Welcome Sign Saying Vegas",
+      "category": "custom",
+      "file": "objects/ai_neon_welcome_sign_saying_143343.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "Neon welcome sign saying VEGAS with bright lights"
+    },
+    {
+      "id": "ai_dice_pair_showing_lucky__143343",
+      "name": "Dice Pair Showing Lucky Seven",
+      "category": "custom",
+      "file": "objects/ai_dice_pair_showing_lucky__143343.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "Dice pair showing lucky seven"
+    },
+    {
+      "id": "ai_a_golden_slot_machine_wi_144512",
+      "name": "A Golden Slot Machine With Bri",
+      "category": "custom",
+      "file": "objects/ai_a_golden_slot_machine_wi_144512.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A golden slot machine with bright lights"
+    },
+    {
+      "id": "ai_a_glowing_neon_casino_si_144512",
+      "name": "A Glowing Neon Casino Sign Wit",
+      "category": "custom",
+      "file": "objects/ai_a_glowing_neon_casino_si_144512.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A glowing neon casino sign with dice and cards"
+    },
+    {
+      "id": "ai_a_grand_vegas_hotel_towe_144512",
+      "name": "A Grand Vegas Hotel Tower With",
+      "category": "custom",
+      "file": "objects/ai_a_grand_vegas_hotel_towe_144512.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A grand Vegas hotel tower with lights"
+    },
+    {
+      "id": "ai_a_neon_flamingo_statue_g_144617",
+      "name": "A Neon Flamingo Statue Glowing",
+      "category": "custom",
+      "file": "objects/ai_a_neon_flamingo_statue_g_144617.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A neon flamingo statue glowing pink"
+    },
+    {
+      "id": "ai_a_giant_roulette_wheel_w_144614",
+      "name": "A Giant Roulette Wheel With Re",
+      "category": "custom",
+      "file": "objects/ai_a_giant_roulette_wheel_w_144614.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant roulette wheel with red and black"
+    },
+    {
+      "id": "ai_a_sparkling_diamond_foun_144614",
+      "name": "A Sparkling Diamond Fountain W",
+      "category": "custom",
+      "file": "objects/ai_a_sparkling_diamond_foun_144614.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A sparkling diamond fountain with water"
+    },
+    {
+      "id": "ai_a_poker_table_with_cards_144617",
+      "name": "A Poker Table With Cards And C",
+      "category": "custom",
+      "file": "objects/ai_a_poker_table_with_cards_144617.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A poker table with cards and chips"
+    },
+    {
+      "id": "ai_a_showgirl_stage_with_sp_144618",
+      "name": "A Showgirl Stage With Spotligh",
+      "category": "custom",
+      "file": "objects/ai_a_showgirl_stage_with_sp_144618.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A showgirl stage with spotlights"
+    },
+    {
+      "id": "ai_a_luxury_limousine_parke_144616",
+      "name": "A Luxury Limousine Parked Outs",
+      "category": "custom",
+      "file": "objects/ai_a_luxury_limousine_parke_144616.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A luxury limousine parked outside a casino"
+    },
+    {
+      "id": "ai_a_towering_golden_pyrami_144907",
+      "name": "A Towering Golden Pyramid Like",
+      "category": "custom",
+      "file": "objects/ai_a_towering_golden_pyrami_144907.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A towering golden pyramid like the Luxor casino"
+    },
+    {
+      "id": "ai_an_enormous_red_dragon_s_144908",
+      "name": "An Enormous Red Dragon Statue ",
+      "category": "custom",
+      "file": "objects/ai_an_enormous_red_dragon_s_144908.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "An enormous red dragon statue breathing fire"
+    },
+    {
+      "id": "ai_a_giant_neon_welcome_to__144907",
+      "name": "A Giant Neon Welcome To Las Ve",
+      "category": "custom",
+      "file": "objects/ai_a_giant_neon_welcome_to__144907.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant neon WELCOME TO LAS VEGAS sign"
+    },
+    {
+      "id": "ai_a_magnificent_palace_wit_144909",
+      "name": "A Magnificent Palace With Gold",
+      "category": "custom",
+      "file": "objects/ai_a_magnificent_palace_wit_144909.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A magnificent palace with golden domes"
+    },
+    {
+      "id": "ai_a_giant_golden_dollar_si_144908",
+      "name": "A Giant Golden Dollar Sign Mon",
+      "category": "custom",
+      "file": "objects/ai_a_giant_golden_dollar_si_144908.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant golden dollar sign monument"
+    },
+    {
+      "id": "ai_a_huge_disco_ball_reflec_144909",
+      "name": "A Huge Disco Ball Reflecting C",
+      "category": "custom",
+      "file": "objects/ai_a_huge_disco_ball_reflec_144909.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A huge disco ball reflecting colorful lights"
+    },
+    {
+      "id": "ai_a_venetian_gondola_on_wa_144909",
+      "name": "A Venetian Gondola On Water Wi",
+      "category": "custom",
+      "file": "objects/ai_a_venetian_gondola_on_wa_144909.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A venetian gondola on water with golden trim"
+    },
+    {
+      "id": "ai_a_huge_neon_dice_showing_144910",
+      "name": "A Huge Neon Dice Showing Lucky",
+      "category": "custom",
+      "file": "objects/ai_a_huge_neon_dice_showing_144910.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A huge neon dice showing lucky 7"
+    },
+    {
+      "id": "ai_a_massive_crystal_chande_144908",
+      "name": "A Massive Crystal Chandelier H",
+      "category": "custom",
+      "file": "objects/ai_a_massive_crystal_chande_144908.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A massive crystal chandelier hanging in the sky"
+    },
+    {
+      "id": "ai_a_champagne_tower_with_g_145422",
+      "name": "A Champagne Tower With Golden ",
+      "category": "custom",
+      "file": "objects/ai_a_champagne_tower_with_g_145422.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A champagne tower with golden bubbles"
+    },
+    {
+      "id": "ai_a_mountain_of_gold_coins_145420",
+      "name": "A Mountain Of Gold Coins And T",
+      "category": "custom",
+      "file": "objects/ai_a_mountain_of_gold_coins_145420.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A mountain of gold coins and treasure overflowing"
+    },
+    {
+      "id": "ai_a_luxury_gold_rolls_royc_145421",
+      "name": "A Luxury Gold Rolls Royce Car",
+      "category": "custom",
+      "file": "objects/ai_a_luxury_gold_rolls_royc_145421.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A luxury gold Rolls Royce car"
+    },
+    {
+      "id": "ai_a_pile_of_gold_bars_stac_145424",
+      "name": "A Pile Of Gold Bars Stacked Li",
+      "category": "custom",
+      "file": "objects/ai_a_pile_of_gold_bars_stac_145424.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A pile of gold bars stacked like a pyramid"
+    },
+    {
+      "id": "ai_a_giant_diamond_ring_spa_145421",
+      "name": "A Giant Diamond Ring Sparkling",
+      "category": "custom",
+      "file": "objects/ai_a_giant_diamond_ring_spa_145421.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant diamond ring sparkling with rainbow light"
+    },
+    {
+      "id": "ai_a_massive_vault_door_mad_145423",
+      "name": "A Massive Vault Door Made Of S",
+      "category": "custom",
+      "file": "objects/ai_a_massive_vault_door_mad_145423.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A massive vault door made of solid gold"
+    },
+    {
+      "id": "ai_a_crystal_trophy_case_wi_145425",
+      "name": "A Crystal Trophy Case With Gol",
+      "category": "custom",
+      "file": "objects/ai_a_crystal_trophy_case_wi_145425.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A crystal trophy case with golden awards"
+    },
+    {
+      "id": "ai_a_diamond_encrusted_crow_145426",
+      "name": "A Diamond Encrusted Crown On A",
+      "category": "custom",
+      "file": "objects/ai_a_diamond_encrusted_crow_145426.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A diamond encrusted crown on a velvet pillow"
+    },
+    {
+      "id": "ai_a_golden_dragon_coiled_a_145426",
+      "name": "A Golden Dragon Coiled Around ",
+      "category": "custom",
+      "file": "objects/ai_a_golden_dragon_coiled_a_145426.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A golden dragon coiled around treasure"
+    },
+    {
+      "id": "ai_the_eiffel_tower_in_pari_150544",
+      "name": "The Eiffel Tower In Paris With",
+      "category": "custom",
+      "file": "objects/ai_the_eiffel_tower_in_pari_150544.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "The Eiffel Tower in Paris with golden lights"
+    },
+    {
+      "id": "ai_the_statue_of_liberty_ho_150546",
+      "name": "The Statue Of Liberty Holding ",
+      "category": "custom",
+      "file": "objects/ai_the_statue_of_liberty_ho_150546.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "The Statue of Liberty holding her torch high"
+    },
+    {
+      "id": "ai_the_colosseum_in_rome_wi_150547",
+      "name": "The Colosseum In Rome With Dra",
+      "category": "custom",
+      "file": "objects/ai_the_colosseum_in_rome_wi_150547.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "The Colosseum in Rome with dramatic lighting"
+    },
+    {
+      "id": "ai_burj_khalifa_the_tallest_150545",
+      "name": "Burj Khalifa The Tallest Build",
+      "category": "custom",
+      "file": "objects/ai_burj_khalifa_the_tallest_150545.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "Burj Khalifa the tallest building in the world with blue lights"
+    },
+    {
+      "id": "ai_the_sydney_opera_house_w_150547",
+      "name": "The Sydney Opera House With Wh",
+      "category": "custom",
+      "file": "objects/ai_the_sydney_opera_house_w_150547.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "The Sydney Opera House with white sails glowing"
+    },
+    {
+      "id": "ai_the_taj_mahal_white_marb_150548",
+      "name": "The Taj Mahal White Marble Pal",
+      "category": "custom",
+      "file": "objects/ai_the_taj_mahal_white_marb_150548.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "The Taj Mahal white marble palace with moonlight"
+    },
+    {
+      "id": "ai_the_empire_state_buildin_150543",
+      "name": "The Empire State Building Skys",
+      "category": "custom",
+      "file": "objects/ai_the_empire_state_buildin_150543.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "The Empire State Building skyscraper in New York at night with lights"
+    },
+    {
+      "id": "ai_the_great_sphinx_of_egyp_150548",
+      "name": "The Great Sphinx Of Egypt With",
+      "category": "custom",
+      "file": "objects/ai_the_great_sphinx_of_egyp_150548.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "The Great Sphinx of Egypt with golden sand"
+    },
+    {
+      "id": "ai_a_chinese_pagoda_temple__150547",
+      "name": "A Chinese Pagoda Temple With R",
+      "category": "custom",
+      "file": "objects/ai_a_chinese_pagoda_temple__150547.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A Chinese pagoda temple with red and gold colors"
+    },
+    {
+      "id": "ai_a_dubai_luxury_yacht_on__150548",
+      "name": "A Dubai Luxury Yacht On Water ",
+      "category": "custom",
+      "file": "objects/ai_a_dubai_luxury_yacht_on__150548.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A Dubai luxury yacht on water with gold trim"
+    },
+    {
+      "id": "ai_big_ben_clock_tower_in_l_150546",
+      "name": "Big Ben Clock Tower In London ",
+      "category": "custom",
+      "file": "objects/ai_big_ben_clock_tower_in_l_150546.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "Big Ben clock tower in London at night"
+    },
+    {
+      "id": "ai_tokyo_tower_glowing_oran_150543",
+      "name": "Tokyo Tower Glowing Orange-Red",
+      "category": "custom",
+      "file": "objects/ai_tokyo_tower_glowing_oran_150543.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "Tokyo Tower glowing orange-red against night sky"
+    },
+    {
+      "id": "ai_mcdonalds_153940",
+      "name": "Mcdonalds",
+      "category": "custom",
+      "file": "objects/ai_mcdonalds_153940.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "McDonalds"
+    },
+    {
+      "id": "ai_costco_154054",
+      "name": "Costco",
+      "category": "custom",
+      "file": "objects/ai_costco_154054.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "costco"
+    },
+    {
+      "id": "ai_costco_but_make_it_6_x_6_154144",
+      "name": "Costco But Make It 6 X 6 Size",
+      "category": "custom",
+      "file": "objects/ai_costco_but_make_it_6_x_6_154144.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "costco but make it 6 x 6 size"
+    },
+    {
+      "id": "ai_a_giant_golden_buddha_st_154818",
+      "name": "A Giant Golden Buddha Statue R",
+      "category": "custom",
+      "file": "objects/ai_a_giant_golden_buddha_st_154818.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant golden Buddha statue radiating light"
+    },
+    {
+      "id": "ai_an_enormous_crystal_pala_154816",
+      "name": "An Enormous Crystal Palace Mad",
+      "category": "custom",
+      "file": "objects/ai_an_enormous_crystal_pala_154816.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "An enormous crystal palace made entirely of gemstones glowing rainbow"
+    },
+    {
+      "id": "ai_a_huge_ferrari_supercar__154818",
+      "name": "A Huge Ferrari Supercar In Bri",
+      "category": "custom",
+      "file": "objects/ai_a_huge_ferrari_supercar__154818.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A huge Ferrari supercar in bright red with gold wheels"
+    },
+    {
+      "id": "ai_a_colossal_money_tree_wi_154817",
+      "name": "A Colossal Money Tree With Gol",
+      "category": "custom",
+      "file": "objects/ai_a_colossal_money_tree_wi_154817.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A colossal money tree with golden leaves and diamond fruits"
+    },
+    {
+      "id": "ai_a_massive_treasure_chest_154818",
+      "name": "A Massive Treasure Chest Overf",
+      "category": "custom",
+      "file": "objects/ai_a_massive_treasure_chest_154818.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A massive treasure chest overflowing with jewels diamonds and gold"
+    },
+    {
+      "id": "ai_a_giant_golden_lion_stat_154819",
+      "name": "A Giant Golden Lion Statue Wit",
+      "category": "custom",
+      "file": "objects/ai_a_giant_golden_lion_stat_154819.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant golden lion statue with ruby eyes"
+    },
+    {
+      "id": "ai_a_massive_golden_skyscra_154816",
+      "name": "A Massive Golden Skyscraper Co",
+      "category": "custom",
+      "file": "objects/ai_a_massive_golden_skyscra_154816.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A massive golden skyscraper covered in diamonds reaching into clouds"
+    },
+    {
+      "id": "ai_a_towering_champagne_gla_154821",
+      "name": "A Towering Champagne Glass Fou",
+      "category": "custom",
+      "file": "objects/ai_a_towering_champagne_gla_154821.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A towering champagne glass fountain with golden bubbles"
+    },
+    {
+      "id": "ai_an_enormous_dragon_made__154821",
+      "name": "An Enormous Dragon Made Of Gol",
+      "category": "custom",
+      "file": "objects/ai_an_enormous_dragon_made__154821.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "An enormous dragon made of gold breathing diamond fire"
+    },
+    {
+      "id": "ai_a_giant_stack_of_hundred_154822",
+      "name": "A Giant Stack Of Hundred Dolla",
+      "category": "custom",
+      "file": "objects/ai_a_giant_stack_of_hundred_154822.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant stack of hundred dollar bills mountain of cash"
+    },
+    {
+      "id": "ai_a_massive_golden_gate_wi_154821",
+      "name": "A Massive Golden Gate With Dia",
+      "category": "custom",
+      "file": "objects/ai_a_massive_golden_gate_wi_154821.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A massive golden gate with diamond pillars like heaven entrance"
+    },
+    {
+      "id": "ai_an_enormous_crown_made_o_154819",
+      "name": "An Enormous Crown Made Of Pure",
+      "category": "custom",
+      "file": "objects/ai_an_enormous_crown_made_o_154819.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "An enormous crown made of pure diamonds floating in air"
+    },
+    {
+      "id": "ai_glowing_neon_purple_dice_155823",
+      "name": "Glowing Neon Purple Dice With ",
+      "category": "custom",
+      "file": "objects/ai_glowing_neon_purple_dice_155823.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "Glowing neon purple dice with golden dots"
+    },
+    {
+      "id": "ai_a_giant_red_dice_with_wh_155823",
+      "name": "A Giant Red Dice With White Do",
+      "category": "custom",
+      "file": "objects/ai_a_giant_red_dice_with_wh_155823.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant red dice with white dots on fire"
+    },
+    {
+      "id": "ai_a_huge_pile_of_colorful__155824",
+      "name": "A Huge Pile Of Colorful Casino",
+      "category": "custom",
+      "file": "objects/ai_a_huge_pile_of_colorful__155824.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A huge pile of colorful casino poker chips"
+    },
+    {
+      "id": "ai_blue_crystal_dice_floati_155824",
+      "name": "Blue Crystal Dice Floating Wit",
+      "category": "custom",
+      "file": "objects/ai_blue_crystal_dice_floati_155824.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "Blue crystal dice floating with sparkles"
+    },
+    {
+      "id": "ai_a_bright_neon_dollar_sig_155827",
+      "name": "A Bright Neon Dollar Sign Glow",
+      "category": "custom",
+      "file": "objects/ai_a_bright_neon_dollar_sig_155827.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A bright neon dollar sign glowing green"
+    },
+    {
+      "id": "ai_neon_playing_cards_royal_155825",
+      "name": "Neon Playing Cards Royal Flush",
+      "category": "custom",
+      "file": "objects/ai_neon_playing_cards_royal_155825.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "Neon playing cards royal flush spread out"
+    },
+    {
+      "id": "ai_a_giant_gold_coin_with_d_155828",
+      "name": "A Giant Gold Coin With Dollar ",
+      "category": "custom",
+      "file": "objects/ai_a_giant_gold_coin_with_d_155828.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant gold coin with dollar sign spinning"
+    },
+    {
+      "id": "ai_a_golden_slot_machine_sh_155826",
+      "name": "A Golden Slot Machine Showing ",
+      "category": "custom",
+      "file": "objects/ai_a_golden_slot_machine_sh_155826.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A golden slot machine showing triple 7 with coins"
+    },
+    {
+      "id": "ai_a_bright_neon_casino_tex_155828",
+      "name": "A Bright Neon Casino Text Sign",
+      "category": "custom",
+      "file": "objects/ai_a_bright_neon_casino_tex_155828.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A bright neon CASINO text sign in rainbow colors"
+    },
+    {
+      "id": "ai_a_showgirl_with_feather__155827",
+      "name": "A Showgirl With Feather Headdr",
+      "category": "custom",
+      "file": "objects/ai_a_showgirl_with_feather__155827.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A showgirl with feather headdress in neon pink"
+    },
+    {
+      "id": "ai_a_golden_microphone_on_a_155829",
+      "name": "A Golden Microphone On A Stage",
+      "category": "custom",
+      "file": "objects/ai_a_golden_microphone_on_a_155829.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A golden microphone on a stage with spotlights"
+    },
+    {
+      "id": "ai_a_stack_of_gold_casino_t_155828",
+      "name": "A Stack Of Gold Casino Tokens ",
+      "category": "custom",
+      "file": "objects/ai_a_stack_of_gold_casino_t_155828.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A stack of gold casino tokens shimmering"
+    },
+    {
+      "id": "ai_a_bright_pink_neon_jackp_155826",
+      "name": "A Bright Pink Neon Jackpot Sig",
+      "category": "custom",
+      "file": "objects/ai_a_bright_pink_neon_jackp_155826.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A bright pink neon JACKPOT sign with stars"
+    },
+    {
+      "id": "ai_a_neon_martini_glass_coc_155827",
+      "name": "A Neon Martini Glass Cocktail ",
+      "category": "custom",
+      "file": "objects/ai_a_neon_martini_glass_coc_155827.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A neon martini glass cocktail with cherry"
+    },
+    {
+      "id": "ai_a_golden_ace_of_spades_c_155824",
+      "name": "A Golden Ace Of Spades Card St",
+      "category": "custom",
+      "file": "objects/ai_a_golden_ace_of_spades_c_155824.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A golden ace of spades card standing upright"
+    },
+    {
+      "id": "ai_a_spinning_rainbow_roule_155825",
+      "name": "A Spinning Rainbow Roulette Wh",
+      "category": "custom",
+      "file": "objects/ai_a_spinning_rainbow_roule_155825.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A spinning rainbow roulette wheel with gold trim"
+    },
+    {
+      "id": "ai_a_luxury_gold_throne_wit_155829",
+      "name": "A Luxury Gold Throne With Red ",
+      "category": "custom",
+      "file": "objects/ai_a_luxury_gold_throne_wit_155829.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A luxury gold throne with red velvet cushion"
+    },
+    {
+      "id": "ai_a_neon_electric_guitar_i_155829",
+      "name": "A Neon Electric Guitar In Purp",
+      "category": "custom",
+      "file": "objects/ai_a_neon_electric_guitar_i_155829.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A neon electric guitar in purple and gold"
+    },
+    {
+      "id": "ai_a_golden_horseshoe_with__155827",
+      "name": "A Golden Horseshoe With Diamon",
+      "category": "custom",
+      "file": "objects/ai_a_golden_horseshoe_with__155827.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A golden horseshoe with diamonds for luck"
+    },
+    {
+      "id": "ai_a_neon_heart_with_arrow__155828",
+      "name": "A Neon Heart With Arrow Glowin",
+      "category": "custom",
+      "file": "objects/ai_a_neon_heart_with_arrow__155828.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A neon heart with arrow glowing red"
+    },
+    {
+      "id": "ai_a_giant_golden_letter_g__171547",
+      "name": "A Giant Golden Letter G Glowin",
+      "category": "custom",
+      "file": "objects/ai_a_giant_golden_letter_g__171547.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant golden letter G glowing with sparkles and fire"
+    },
+    {
+      "id": "ai_a_giant_golden_letter_s__171549",
+      "name": "A Giant Golden Letter S Glowin",
+      "category": "custom",
+      "file": "objects/ai_a_giant_golden_letter_s__171549.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant golden letter S glowing with neon light"
+    },
+    {
+      "id": "ai_a_giant_golden_letter_a__171549",
+      "name": "A Giant Golden Letter A Glowin",
+      "category": "custom",
+      "file": "objects/ai_a_giant_golden_letter_a__171549.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant golden letter A glowing with rainbow sparkles"
+    },
+    {
+      "id": "ai_a_giant_golden_letter_e__171547",
+      "name": "A Giant Golden Letter E Glowin",
+      "category": "custom",
+      "file": "objects/ai_a_giant_golden_letter_e__171547.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant golden letter E glowing with sparkles and lightning"
+    },
+    {
+      "id": "ai_a_giant_golden_letter_n__171548",
+      "name": "A Giant Golden Letter N Glowin",
+      "category": "custom",
+      "file": "objects/ai_a_giant_golden_letter_n__171548.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant golden letter N glowing with sparkles and energy"
+    },
+    {
+      "id": "ai_a_massive_golden_star_ex_171552",
+      "name": "A Massive Golden Star Explosio",
+      "category": "custom",
+      "file": "objects/ai_a_massive_golden_star_ex_171552.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A massive golden star explosion radiating golden sparks in all directions"
+    },
+    {
+      "id": "ai_a_giant_golden_letter_r__171550",
+      "name": "A Giant Golden Letter R Glowin",
+      "category": "custom",
+      "file": "objects/ai_a_giant_golden_letter_r__171550.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant golden letter R glowing with ruby red light"
+    },
+    {
+      "id": "ai_a_cluster_of_tiny_golden_171556",
+      "name": "A Cluster Of Tiny Golden Stars",
+      "category": "custom",
+      "file": "objects/ai_a_cluster_of_tiny_golden_171556.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A cluster of tiny golden stars twinkling and sparkling"
+    },
+    {
+      "id": "ai_a_giant_golden_letter_k__171550",
+      "name": "A Giant Golden Letter K Glowin",
+      "category": "custom",
+      "file": "objects/ai_a_giant_golden_letter_k__171550.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant golden letter K glowing with electric sparks"
+    },
+    {
+      "id": "ai_a_giant_golden_letter_p__171549",
+      "name": "A Giant Golden Letter P Glowin",
+      "category": "custom",
+      "file": "objects/ai_a_giant_golden_letter_p__171549.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant golden letter P glowing with diamond light"
+    },
+    {
+      "id": "ai_a_brilliant_golden_spark_171554",
+      "name": "A Brilliant Golden Spark Shoot",
+      "category": "custom",
+      "file": "objects/ai_a_brilliant_golden_spark_171554.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A brilliant golden spark shooting upward like a firework"
+    },
+    {
+      "id": "ai_a_towering_neon_welcome__225350",
+      "name": "A Towering Neon Welcome Sign W",
+      "category": "custom",
+      "file": "objects/ai_a_towering_neon_welcome__225350.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A towering neon welcome sign with stars and sparkles shooting out"
+    },
+    {
+      "id": "ai_a_giant_glowing_neon_arc_225350",
+      "name": "A Giant Glowing Neon Arch Gate",
+      "category": "custom",
+      "file": "objects/ai_a_giant_glowing_neon_arc_225350.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant glowing neon arch gate with Welcome to Genspark text in gold letters with sparkles"
+    },
+    {
+      "id": "ai_a_massive_golden_welcome_225350",
+      "name": "A Massive Golden Welcome Arch ",
+      "category": "custom",
+      "file": "objects/ai_a_massive_golden_welcome_225350.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A massive golden welcome arch with bright neon lights and fireworks"
+    },
+    {
+      "id": "ai_a_giant_bronze_gear_mech_005353",
+      "name": "A Giant Bronze Gear Mechanism ",
+      "category": "custom",
+      "file": "objects/ai_a_giant_bronze_gear_mech_005353.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant bronze gear mechanism with golden lightning bolts shooting out"
+    },
+    {
+      "id": "ai_a_willy_wonka_style_gold_005357",
+      "name": "A Willy Wonka Style Golden Fac",
+      "category": "custom",
+      "file": "objects/ai_a_willy_wonka_style_gold_005357.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A Willy Wonka style golden factory entrance with steam and sparkles"
+    },
+    {
+      "id": "ai_a_copper_chimney_tower_b_005356",
+      "name": "A Copper Chimney Tower Billowi",
+      "category": "custom",
+      "file": "objects/ai_a_copper_chimney_tower_b_005356.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A copper chimney tower billowing golden sparks and glitter into the sky"
+    },
+    {
+      "id": "ai_a_steampunk_conveyor_bel_005356",
+      "name": "A Steampunk Conveyor Belt Carr",
+      "category": "custom",
+      "file": "objects/ai_a_steampunk_conveyor_bel_005356.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A steampunk conveyor belt carrying golden stars and sparkles"
+    },
+    {
+      "id": "ai_a_massive_steampunk_fact_005352",
+      "name": "A Massive Steampunk Factory Wi",
+      "category": "custom",
+      "file": "objects/ai_a_massive_steampunk_fact_005352.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A massive steampunk factory with golden gears and copper pipes spewing golden sparks from its chimney"
+    },
+    {
+      "id": "ai_a_giant_golden_furnace_g_005359",
+      "name": "A Giant Golden Furnace Glowing",
+      "category": "custom",
+      "file": "objects/ai_a_giant_golden_furnace_g_005359.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant golden furnace glowing with molten gold and shooting sparks"
+    },
+    {
+      "id": "ai_a_colossal_golden_lobste_005451",
+      "name": "A Colossal Golden Lobster Stat",
+      "category": "custom",
+      "file": "objects/ai_a_colossal_golden_lobste_005451.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A colossal golden lobster statue covered in diamonds and jewels, glowing with divine golden light, like an ancient guardian deity"
+    },
+    {
+      "id": "ai_a_massive_golden_lobster_005451",
+      "name": "A Massive Golden Lobster Thron",
+      "category": "custom",
+      "file": "objects/ai_a_massive_golden_lobster_005451.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A massive golden lobster throne with ruby eyes and a golden crown, radiating power and wealth"
+    },
+    {
+      "id": "ai_a_massive_golden_vault_s_011621",
+      "name": "A Massive Golden Vault Safe Wi",
+      "category": "custom",
+      "file": "objects/ai_a_massive_golden_vault_s_011621.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A massive golden vault safe with its door half open, brilliant golden light pouring out from inside, piles of gold visible"
+    },
+    {
+      "id": "ai_a_pile_of_gold_bars_and__011621",
+      "name": "A Pile Of Gold Bars And Diamon",
+      "category": "custom",
+      "file": "objects/ai_a_pile_of_gold_bars_and__011621.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A pile of gold bars and diamonds spilling out of an open vault on the floor"
+    },
+    {
+      "id": "ai_golden_coins_and_dollar__011623",
+      "name": "Golden Coins And Dollar Bills ",
+      "category": "custom",
+      "file": "objects/ai_golden_coins_and_dollar__011623.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "Golden coins and dollar bills raining down from above with fireworks and sparkles"
+    },
+    {
+      "id": "ai_a_shower_of_golden_coins_011622",
+      "name": "A Shower Of Golden Coins Falli",
+      "category": "custom",
+      "file": "objects/ai_a_shower_of_golden_coins_011622.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A shower of golden coins falling from the sky like rain with sparkles and light beams"
+    },
+    {
+      "id": "ai_a_deck_of_flying_playing_013611",
+      "name": "A Deck Of Flying Playing Cards",
+      "category": "custom",
+      "file": "objects/ai_a_deck_of_flying_playing_013611.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A deck of flying playing cards scattered in the air with magical glow"
+    },
+    {
+      "id": "ai_a_royal_flush_poker_hand_013610",
+      "name": "A Royal Flush Poker Hand Fanne",
+      "category": "custom",
+      "file": "objects/ai_a_royal_flush_poker_hand_013610.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A royal flush poker hand fanned out with golden edges and sparkles"
+    },
+    {
+      "id": "ai_a_pair_of_flaming_red_di_013608",
+      "name": "A Pair Of Flaming Red Dice Rol",
+      "category": "custom",
+      "file": "objects/ai_a_pair_of_flaming_red_di_013608.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A pair of flaming red dice rolling with fire trails"
+    },
+    {
+      "id": "ai_a_neon_green_glowing_dic_013610",
+      "name": "A Neon Green Glowing Dice Floa",
+      "category": "custom",
+      "file": "objects/ai_a_neon_green_glowing_dic_013610.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A neon green glowing dice floating in mid-air"
+    },
+    {
+      "id": "ai_a_giant_king_of_hearts_p_013612",
+      "name": "A Giant King Of Hearts Playing",
+      "category": "custom",
+      "file": "objects/ai_a_giant_king_of_hearts_p_013612.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant king of hearts playing card standing upright with gold frame"
+    },
+    {
+      "id": "ai_a_giant_golden_dice_with_013610",
+      "name": "A Giant Golden Dice With Diamo",
+      "category": "custom",
+      "file": "objects/ai_a_giant_golden_dice_with_013610.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant golden dice with diamond studs on each dot"
+    },
+    {
+      "id": "ai_a_massive_steampunk_fact_074542",
+      "name": "A Massive Steampunk Factory Wi",
+      "category": "custom",
+      "file": "objects/ai_a_massive_steampunk_fact_074542.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A massive steampunk factory with golden gears and copper pipes spewing golden sparks from its chimney"
+    },
+    {
+      "id": "ai_a_grand_spark_factory_bu_115623",
+      "name": "A Grand Spark Factory Building",
+      "category": "custom",
+      "file": "objects/ai_a_grand_spark_factory_bu_115623.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A grand Spark Factory building with visible spinning brass gears, moving conveyor belts, a tall brick chimney shooting golden stars and sparkles into the sky, copper steam pipes with billowing steam,"
+    },
+    {
+      "id": "ai_a_giant_golden_lobster_g_121035",
+      "name": "A Giant Golden Lobster Guardia",
+      "category": "custom",
+      "file": "objects/ai_a_giant_golden_lobster_g_121035.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "ai_generated": true,
+      "prompt": "A giant golden lobster guardian sphinx statue with ruby eyes, massive raised claws, on ornate stone pedestal, like Luxor sphinx, majestic gold shimmer"
+    },
+    {
+      "id": "golden_tree",
+      "name": "Golden Tree",
+      "category": "crafted",
+      "file": "objects/golden_tree.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "emoji": "🌟"
+    },
+    {
+      "id": "enchanted_well",
+      "name": "Enchanted Well",
+      "category": "crafted",
+      "file": "objects/enchanted_well.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "emoji": "✨"
+    },
+    {
+      "id": "lighthouse_deluxe",
+      "name": "Grand Lighthouse",
+      "category": "crafted",
+      "file": "objects/lighthouse_deluxe.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "emoji": "🏰"
+    },
+    {
+      "id": "zen_garden",
+      "name": "Zen Garden",
+      "category": "crafted",
+      "file": "objects/zen_garden.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "emoji": "🎋"
+    },
+    {
+      "id": "robot_workshop",
+      "name": "Robot Workshop",
+      "category": "crafted",
+      "file": "objects/robot_workshop.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "emoji": "🤖"
+    },
+    {
+      "id": "fairy_cottage",
+      "name": "Fairy Cottage",
+      "category": "crafted",
+      "file": "objects/fairy_cottage.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "emoji": "🧚"
+    },
+    {
+      "id": "crystal_fountain",
+      "name": "Crystal Fountain",
+      "category": "crafted",
+      "file": "objects/crystal_fountain.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "emoji": "💎"
+    },
+    {
+      "id": "pirate_dock",
+      "name": "Pirate Dock",
+      "category": "crafted",
+      "file": "objects/pirate_dock.png",
+      "footprint": [
+        1,
+        1
+      ],
+      "walkable": false,
+      "emoji": "🏴"
+    }
+  ]
+}

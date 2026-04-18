@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🦞 Clawverse Dev Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0d1117;--surface:#161b22;--border:#30363d;
+  --green:#3fb950;--yellow:#d29922;--red:#f85149;--blue:#58a6ff;--purple:#bc8cff;--orange:#f0883e;
+  --text:#e6edf3;--muted:#8b949e;
+}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;line-height:1.6}
+header{
+  background:var(--surface);border-bottom:1px solid var(--border);
+  padding:14px 24px;display:flex;align-items:center;gap:16px;
+  position:sticky;top:0;z-index:100;
+}
+header h1{font-family:'Press Start 2P';font-size:11px;color:var(--blue)}
+#refresh-badge{
+  margin-left:auto;font-size:11px;color:var(--muted);
+  display:flex;align-items:center;gap:8px;
+}
+#pulse{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+#last-update{color:var(--muted);font-size:11px}
+
+.container{max-width:1400px;margin:0 auto;padding:20px 24px;display:grid;gap:16px}
+
+/* Top stats bar */
+#stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.stat-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:8px;
+  padding:14px 16px;
+}
+.stat-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.stat-value{font-size:22px;font-weight:600;color:var(--text)}
+.stat-sub{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* Agent state badge */
+#agent-state-bar{
+  background:var(--surface);border:1px solid var(--border);border-radius:8px;
+  padding:12px 16px;display:flex;align-items:center;gap:12px;
+}
+.state-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.state-idle{background:#8b949e}.state-writing{background:#d29922}
+.state-researching{background:#58a6ff}.state-executing{background:#3fb950}
+.state-syncing{background:#bc8cff}.state-error{background:#f85149}
+#state-text{font-weight:500}
+#state-detail{color:var(--muted);font-size:12px;margin-left:auto}
+
+/* Agent progress grid */
+#agents-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:12px}
+.agent-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:8px;
+  overflow:hidden;
+}
+.agent-header{
+  padding:10px 14px;display:flex;align-items:center;gap:10px;
+  border-bottom:1px solid var(--border);background:rgba(255,255,255,0.02);
+}
+.agent-emoji{font-size:16px}
+.agent-name{font-weight:600;font-size:13px}
+.agent-status{margin-left:auto;font-size:10px;padding:2px 8px;border-radius:10px;font-weight:500}
+.status-done{background:rgba(63,185,80,.15);color:var(--green)}
+.status-active{background:rgba(88,166,255,.15);color:var(--blue);animation:blink 1.5s infinite}
+.status-waiting{background:rgba(139,148,158,.1);color:var(--muted)}
+@keyframes blink{50%{opacity:0.5}}
+.agent-body{padding:12px 14px;font-size:12px;line-height:1.7;max-height:280px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}
+.agent-body::-webkit-scrollbar{width:4px}
+.agent-body::-webkit-scrollbar-thumb{background:var(--border)}
+
+/* Markdown-ish rendering */
+.md-done{color:var(--green)}
+.md-warn{color:var(--yellow)}
+.md-error{color:var(--red)}
+.md-heading{color:var(--blue);font-weight:600}
+.md-flag{color:var(--purple)}
+
+/* Tasks board */
+#tasks-section{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+#tasks-header{
+  padding:10px 14px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:8px;font-weight:600;
+}
+#tasks-body{padding:12px 14px;font-size:12px;line-height:1.8;white-space:pre-wrap;max-height:320px;overflow-y:auto}
+#tasks-body::-webkit-scrollbar{width:4px}
+#tasks-body::-webkit-scrollbar-thumb{background:var(--border)}
+
+/* Final report */
+#final-section{display:none;background:var(--surface);border:2px solid var(--green);border-radius:8px;overflow:hidden}
+#final-header{
+  padding:10px 14px;border-bottom:1px solid var(--border);
+  background:rgba(63,185,80,.08);display:flex;align-items:center;gap:8px;font-weight:600;color:var(--green)
+}
+#final-body{padding:14px;font-size:13px;line-height:1.8;white-space:pre-wrap}
+
+/* Links */
+.world-link{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(88,166,255,.1);border:1px solid rgba(88,166,255,.3);
+  color:var(--blue);border-radius:6px;padding:6px 12px;font-size:12px;
+  text-decoration:none;transition:all .15s;
+}
+.world-link:hover{background:rgba(88,166,255,.2);border-color:var(--blue)}
+
+footer{text-align:center;padding:20px;color:var(--muted);font-size:11px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🦞 Clawverse Dev Dashboard</h1>
+  <a href="/" class="world-link" target="_blank">🌍 Open World</a>
+  <div id="refresh-badge">
+    <div id="pulse"></div>
+    <span>Auto-refresh every 10s</span>
+    <span id="last-update">—</span>
+  </div>
+</header>
+
+<div class="container">
+  <!-- Stats bar -->
+  <div id="stats-bar">
+    <div class="stat-card">
+      <div class="stat-label">World Name</div>
+      <div class="stat-value" id="world-name" style="font-size:16px">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Terrain Tiles</div>
+      <div class="stat-value" id="terrain-count">—</div>
+      <div class="stat-sub" id="catalog-terrain">— in catalog</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Objects Placed</div>
+      <div class="stat-value" id="object-count">—</div>
+      <div class="stat-sub" id="catalog-objects">— in catalog</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Total Catalog</div>
+      <div class="stat-value" id="catalog-total">—</div>
+      <div class="stat-sub">tiles available</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Backend Uptime</div>
+      <div class="stat-value" id="uptime" style="font-size:16px">—</div>
+      <div class="stat-sub">🟢 healthy</div>
+    </div>
+  </div>
+
+  <!-- Agent state -->
+  <div id="agent-state-bar">
+    <div id="state-dot" class="state-dot state-idle"></div>
+    <span id="state-text">—</span>
+    <span id="state-detail">—</span>
+  </div>
+
+  <!-- Agent cards -->
+  <div id="agents-grid">
+    <div class="agent-card" id="card-manager">
+      <div class="agent-header">
+        <span class="agent-emoji">🎯</span>
+        <span class="agent-name">Manager</span>
+        <span class="agent-status status-active" id="status-manager">Active</span>
+      </div>
+      <div class="agent-body" id="body-manager">Loading…</div>
+    </div>
+    <div class="agent-card" id="card-frontend">
+      <div class="agent-header">
+        <span class="agent-emoji">🖥</span>
+        <span class="agent-name">Frontend Dev</span>
+        <span class="agent-status status-waiting" id="status-frontend">—</span>
+      </div>
+      <div class="agent-body" id="body-frontend">Loading…</div>
+    </div>
+    <div class="agent-card" id="card-backend">
+      <div class="agent-header">
+        <span class="agent-emoji">⚙️</span>
+        <span class="agent-name">Backend Dev</span>
+        <span class="agent-status status-waiting" id="status-backend">—</span>
+      </div>
+      <div class="agent-body" id="body-backend">Loading…</div>
+    </div>
+    <div class="agent-card" id="card-worlddesign">
+      <div class="agent-header">
+        <span class="agent-emoji">🗺</span>
+        <span class="agent-name">World Design</span>
+        <span class="agent-status status-waiting" id="status-worlddesign">—</span>
+      </div>
+      <div class="agent-body" id="body-worlddesign">Loading…</div>
+    </div>
+    <div class="agent-card" id="card-qa">
+      <div class="agent-header">
+        <span class="agent-emoji">🔍</span>
+        <span class="agent-name">QA</span>
+        <span class="agent-status status-waiting" id="status-qa">—</span>
+      </div>
+      <div class="agent-body" id="body-qa">Loading…</div>
+    </div>
+  </div>
+
+  <!-- Tasks board -->
+  <div id="tasks-section">
+    <div id="tasks-header">📋 Task Board</div>
+    <div id="tasks-body">Loading…</div>
+  </div>
+
+  <!-- Final report (shown when available) -->
+  <div id="final-section">
+    <div id="final-header">🏁 Sprint Final Report</div>
+    <div id="final-body"></div>
+  </div>
+</div>
+
+<footer>🦞 Clawverse Dev Dashboard · Auto-refresh · <a href="/" style="color:var(--blue)">Open World →</a></footer>
+
+<script>
+function renderMarkdown(text) {
+  if (!text) return '<span style="color:var(--muted)">No updates yet</span>';
+  return text
+    .replace(/^(#{1,3} .+)$/gm, '<span class="md-heading">$1</span>')
+    .replace(/✅([^\n]*)/g, '<span class="md-done">✅$1</span>')
+    .replace(/⚠️([^\n]*)/g, '<span class="md-warn">⚠️$1</span>')
+    .replace(/❌([^\n]*)/g, '<span class="md-error">❌$1</span>')
+    .replace(/🏁([^\n]*)/g, '<span class="md-flag">🏁$1</span>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/`([^`]+)`/g, '<code style="background:rgba(255,255,255,.08);padding:1px 4px;border-radius:3px;font-family:monospace">$1</code>');
+}
+
+function detectStatus(text) {
+  if (!text || text.includes('no progress yet')) return { cls: 'status-waiting', label: 'Waiting' };
+  if (text.includes('🏁')) return { cls: 'status-done', label: 'Done ✓' };
+  if (text.includes('✅')) return { cls: 'status-active', label: 'Working' };
+  return { cls: 'status-waiting', label: 'Starting' };
+}
+
+const STATE_LABELS = {
+  idle: 'At Rest', writing: 'Writing', researching: 'Exploring',
+  executing: 'Full Speed', syncing: 'Syncing', error: 'Trouble'
+};
+
+async function refresh() {
+  try {
+    const r = await fetch('/dashboard/data?t=' + Date.now());
+    const d = await r.json();
+
+    // Stats
+    document.getElementById('world-name').textContent = d.world.name;
+    document.getElementById('terrain-count').textContent = d.world.terrain.toLocaleString();
+    document.getElementById('catalog-terrain').textContent = d.catalog.terrain + ' in catalog';
+    document.getElementById('object-count').textContent = d.world.objects;
+    document.getElementById('catalog-objects').textContent = d.catalog.objects + ' in catalog';
+    document.getElementById('catalog-total').textContent = d.catalog.terrain + d.catalog.objects;
+    document.getElementById('uptime').textContent = d.uptime || '—';
+
+    // Agent state
+    const state = d.agent_state.state || 'idle';
+    const dot = document.getElementById('state-dot');
+    dot.className = 'state-dot state-' + state;
+    document.getElementById('state-text').textContent = '🦞 ' + (STATE_LABELS[state] || state);
+    document.getElementById('state-detail').textContent = d.agent_state.detail || '';
+
+    // Agent progress cards
+    const agents = ['manager','frontend','backend','worlddesign','qa'];
+    for (const a of agents) {
+      const text = d.progress[a] || '';
+      document.getElementById('body-' + a).innerHTML = renderMarkdown(text);
+      const { cls, label } = detectStatus(text);
+      const el = document.getElementById('status-' + a);
+      el.className = 'agent-status ' + cls;
+      el.textContent = label;
+      // Scroll to bottom
+      const body = document.getElementById('body-' + a);
+      body.scrollTop = body.scrollHeight;
+    }
+
+    // Tasks
+    document.getElementById('tasks-body').innerHTML = renderMarkdown(d.tasks);
+
+    // Final report
+    if (d.final_report) {
+      document.getElementById('final-section').style.display = 'block';
+      document.getElementById('final-body').innerHTML = renderMarkdown(d.final_report);
+    }
+
+    // Last update
+    const now = new Date();
+    document.getElementById('last-update').textContent = 
+      `Updated ${now.getUTCHours().toString().padStart(2,'0')}:${now.getUTCMinutes().toString().padStart(2,'0')}:${now.getUTCSeconds().toString().padStart(2,'0')} UTC`;
+
+  } catch(e) {
+    console.error('Refresh error:', e);
+  }
+}
+
+refresh();
+setInterval(refresh, 10000);
+</script>
+</body>
+</html>

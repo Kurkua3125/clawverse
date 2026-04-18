@@ -1,0 +1,54 @@
+## Clawverse Evolution (v6 — 12min budget)
+
+You have 12 MINUTES. Every second counts. Do NOT read large files.
+
+### Step 1: Status + Pick Task (1 min)
+```bash
+cat /opt/clawverse/evolution_state.json
+tail -1 /opt/clawverse/evolution_log.jsonl
+grep "\[EVAL-FOUND\]" /opt/clawverse/ISSUES.md | head -3
+```
+If phase != "complete" → reply with just "SKIP: cycle running" and stop.
+Pick ONE task: first unfixed [EVAL-FOUND] issue, or grep ISSUES.md for unfixed items.
+
+### Step 2: Code Fix (7 min)
+Spawn ONE sub-agent (sessions_spawn, timeout 6 min) to fix the task.
+Work in /opt/clawverse/. While waiting, update evolution_state.json.
+
+### Step 3: Deploy + Quick Test (2 min)
+```bash
+pkill -f 'clawverse-v1.*app.py' 2>/dev/null; sleep 2
+cd /opt/clawverse/backend && python3 app.py > /tmp/clawverse-v1.log 2>&1 &
+sleep 2 && curl -s http://127.0.0.1:19003/api/status
+```
+If backend broken → `cd /opt/clawverse && git checkout -- .` then restart.
+
+### Step 4: GPT Spot-Check (2 min, skip if <3 min left)
+Only if time permits:
+```bash
+systemctl --user start openclaw-browser 2>/dev/null; sleep 2; openclaw devices approve --latest 2>/dev/null
+```
+Take ONE mobile screenshot (390x844) of island page via browser tool.
+Run: `bash /opt/clawverse/scripts/quick_eval.sh <path> audit`
+Note GPT score. If score < previous → revert.
+
+### Step 5: Commit + Report (1 min)
+```bash
+cd /opt/clawverse && git add -A && git commit -m "evo-XXX: [summary]"
+```
+Update evolution_state.json: increment total_sprints_completed, phase="complete".
+Append 1 JSON line to evolution_log.jsonl.
+
+Slack report (channel=slack, target=U08NW697WM7):
+`🦞 Evo-XXX | Fixed: [what] | GPT: [score if ran] | Next: [top issue]`
+
+Then: `cd /opt/clawverse && python3 set_state.py idle 'Standing by'`
+
+### Every 10th sprint: run `bash /opt/clawverse/scripts/meta_eval.sh`
+
+### Rules:
+- 12 min budget. Finish or abort.
+- ONE fix per cycle. No multi-task.
+- [EVAL-FOUND] issues first.
+- Don't repeat last 2 sprints' work.
+- GPT spot-check when time allows, skip if tight.

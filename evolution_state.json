@@ -1,0 +1,17 @@
+{
+  "current_sprint": "evo-252",
+  "phase": "complete",
+  "started_at": "2026-03-25T08:27:00Z",
+  "tasks": [
+    {
+      "id": "fish-collection",
+      "status": "done",
+      "desc": "Add Fish Collection / Aquarium view to fishing panel with backend endpoint"
+    }
+  ],
+  "total_sprints_completed": 251,
+  "last_eval_sprint": 167,
+  "last_eval_time": "2026-03-24T03:20:00Z",
+  "eval_interval": 10,
+  "notes": "HARD STOP: Do NOT run more mobile CSS tweaks. GPT mobile score has been 3-4/10 for 40+ sprints (evo-126 to evo-167). This is a structural limitation — the evaluator penalizes scrolling card lists regardless of CSS quality. The desktop score is 7-8/10 and the game works well. Future sprints should focus ONLY on: (1) new gameplay features, (2) island page improvements, (3) backend features, (4) content/islands. NO MORE LOBBY MOBILE CSS."
+}

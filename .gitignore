@@ -1,0 +1,44 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+
+# Database
+*.db
+*.db-journal
+
+# Environment
+.env
+.env.*
+.flask_secret
+
+# Thumbnails & cache (generated)
+backend/thumb_cache/
+backend/thumbnails/
+
+# User data (generated)
+backend/worlds/
+backend/chat_logs/
+backend/island_story.json
+backend/islands.json
+backend/visits.json
+
+# Screenshots & media (dev artifacts)
+eval_screenshots/
+eval-results/
+*.jpg
+*.png
+!frontend/*.png
+!catalog/**/*.png
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Push notification keys
+backend/vapid_keys.json
+demo/
